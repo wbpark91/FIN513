@@ -1,0 +1,238 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.5} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkTitle)} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework\ \#1} % Assignment title
+\newcommand{\hmwkDueDate}{Thursday,\ January\ 25,\ 2018} % Due date
+\newcommand{\hmwkClass}{FIN\ 513} % Course/class
+\newcommand{\hmwkClassTime}{9:30am} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Wanbae Park} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%%\newpage
+%%\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\begin{enumerate}[(a)]
+\item
+Agree. Generally, low-growth stock gives higher dividend than high-growth stock. Since high-growth company needs more capital than low-growth company, the amount of retained earning might be larger than that of low-growth company. Therefore, the futures price of high-growth stock will be a less discount over the spot price.
+\item
+Agree.
+\item
+Agree.
+\end{enumerate}
+
+%%\includegraphics[width=0.75\columnwidth]{example_figure} % Example image
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}%%[Exercise \#\arabic{homeworkProblemCounter}] % Custom section title
+Let $r_L^D$ denote dollar rates for lending, $r_L^E$ denote euro rates for lending, $r_B^D$ and $r_B^E$ denote dollar and euro rates for borrowing, respectively. Let $S_t^B$ and $S_t^O$ denote bid and offer exchange rate, respectively. In the following way, we can replicate long position and short position of dollar/euro forward.
+%%
+\begin{enumerate}[1)]
+\item \textit{Replicate Long Position}
+	\begin{enumerate}
+		\item Borrow $S_t^O \frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ dollars at rate $r_B^D$
+		\item Exchange $S_t^O \frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ dollars to $\frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ euros, then invest for time $T-t$ at rate $r_L^E$.
+	\end{enumerate}
+	At time $T$, the value of strategy (a) becomes $-S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ dollars and the value of strategy (b) becomes 1 euro which perfectly replicates long position of forward contract. Since the initial values of two strategies are identical, the forward price $F_{t, T}$ should be equal to $S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ dollars.
+	
+\item \textit{Replicate Short Position}
+	\begin{enumerate}
+		\item Borrow $\frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ euros at rate $r_B^E$
+		\item Exchange $\frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ euros to $S_t^B \frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ dollars, then invest at rate $r_L^D$.
+	\end{enumerate}
+	At time $T$, the value of strategy (a) becomes -1 euro, which is identical to short position of forward contract. Therefore, if there is no arbitrage in market, the forward price should be equal to the value of strategy (b) at time $T$, which is $S_t^B (\frac{1 + 0.5 r_L^D}{1 + 0.5r_B^E})^{2(T-t)}$
+\end{enumerate}
+
+Since $r_L^D < r_B^D$, $r_L^E < r_B^E$ and $S_t^B < S_t^O$, the value of replicate portfolio of short position is less than that of long position. Therefore, the upper and lower bound of the contract is $S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ and $S_t^B (\frac{1 + 0.5 r_L^D}{1 + 0.5r_B^E})^{2(T-t)}$, respectively. The following table shows that the numerical results using parameters on the homework sheet.
+
+%% Table
+\begin{table}[]
+\centering
+\label{tab:problem2}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\textit{T}     & \textit{Lower Bound} & \textit{Upper Bound} \\ \midrule
+\textit{1 yr}  & 1.4913               & 1.4940               \\
+\textit{5 yr}  & 1.4833               & 1.4993               \\
+\textit{10 yr} & 1.5218               & 1.5526               \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}%%[Prob. \Roman{homeworkProblemCounter}] % Roman numerals
+Assume that the fair price of single price is $x$, then $x$ should be larger than 308 and smaller than 313. Consider the following strategy.
+\begin{enumerate}[(a)]
+	\item Get a long position on the original contract.
+	\item Get a short position on the new contract.
+\end{enumerate}
+Since the cash flow at time $t = 1.5$ is known at $t = t_0$, we can reinvest the net cash flow($x - 308$) at $t = 1.5$ to $t = 2$ by using the following strategy.
+
+\begin{enumerate}[(1)]
+	\item sell short $x - 308$ amount of zero coupon bond with maturity $t = 1.5$
+	\item buy $\frac{(x - 308)B_{0, 1.5}}{B_{0, 2}}$ amount of zero coupon bond with maturity $t = 2$.
+\end{enumerate}
+By netting out the values of strategy (1) and (2), there is no initial amount of cash flow. Furthermore, the strategies also makes cash flow at $t = 1.5$ to be zero. Finally, at time $t = 2$, the net cash flow from the whole strategies is equal to $x - 313 + (x - 308)\frac{B_{0, 1.5}}{B_{0, 2}}$. Since there is no cash flow before $t = 2$, the net cash flow at $t = 2$ should be equal to zero, otherwise there exists arbitrage opportunities. Therefore, the following equation holds.
+\begin{equation*}
+\begin{aligned}
+	&x - 313 + (x - 308)\frac{B_{0, 1.5}}{B_{0, 2}} = 0	\\
+	&\Rightarrow B_{0, 1.5}x + B_{0, 2}x = 308B_{0, 1.5} + 313B_{0, 2}	\\
+	&\Rightarrow (0.912 + 0.883)x = 308 \times 0.912 + 313 \times 0.883	\\
+	&\Rightarrow x = 310.4596
+\end{aligned}
+\end{equation*}
+Therefore, the fair price that a market maker would be willing to offer is 310.4596.
+
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[Prob. \Roman{homeworkProblemCounter}] % Roman numerals
+\problemAnswer{ % Answer
+\lipsum[10]
+}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
