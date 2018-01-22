@@ -149,7 +149,7 @@ Agree. Generally, low-growth stock gives higher dividend than high-growth stock.
 \item
 Agree.
 \item
-Agree.
+Agree. When constructing replicating portfolio which replicates the dynamics of value of derivatives to value the derivatives relatively, we assume self-financing. that means all dividends are reinvested. If price of stocks does not drop by the amount of the dividend per share, the value of position of replicating portfolio would be greater than the value of stock, and it contradicts the meaning of replicating portfolio.
 \end{enumerate}
 
 %%\includegraphics[width=0.75\columnwidth]{example_figure} % Example image
@@ -242,5 +242,42 @@ Therefore, the fair price that a market maker would be willing to offer is 310.4
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
 
+\begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+	%% Sub-Problem (a)
+		\item Assume that the contract is closed at time $T$. The contract is equivalent to a contract in which person who is in long position would get a stock, and would pay $c$ and interest when the position is closed. Since we assumed that interest is debited or credited continuously, the total payment is equal to $ce^{r(T-t)}$. Like forward contract, we can replicate same payoff by taking long position to a stock, and borrowing the amount of money to buy a stock. At time $T$, the value of long position to a stock would be $S_T$ and the value of short position to bond would be $S_t^{r(T-t)}$. If there is no arbitrage in market, the value of short position to bond should be equal to the total payment in CFD. Therefore, the following equation should hold.
+		\begin{equation*}
+			ce^{r(T-t)} = S_t^{r(T-t)}
+		\end{equation*}
+		Therefore, the fair price of CFD is $c = S_t$. Otherwise, there would be arbitrage opportunities.
+	
+	%% Sub-Problem (b)
+		\item Let $t_0$ and $t_2$ be closing times and $t_1$ be open time. Assume that $t_0 < t_1 < t_2$. An arbitrage opportunity exists by using the following strategy.
+		\begin{enumerate}[(1)]
+			\item Take a long position on CFD.
+			\item Take a short position on a underlying stock.
+			\item Invest $S_{t_0}$ at rate $r$ with maturity $t_2$.
+			\item Close every position at time $t_2$.
+		\end{enumerate}
+		Since the interest is charged only for the position held overnight, the amount of interest at time $t_2$ would be $S_{t_0}e^{r(t_1  -t_0)}$, and that is important key to make an arbitrage opportunity. The following table describes the payoff from the strategy.
+		
+		\begin{table}[h!]
+		\centering
+		\label{tab:problem5}
+		\begin{tabular}{@{}cccc@{}}
+		\toprule
+		\textit{Position/Time}  & $t_0$      & $t_1$ & $t_2$                                               \\ \midrule
+		\textit{Long on CFD}    &            &       & $S_{t_2} - S_{t_0} - S_{t_0}(e^{r(t_1 - t_0)} - 1)$ \\
+		\textit{Short on Stock} & $S_{t_0}$  &       & $-S_{t_2}$                                          \\
+		\textit{Invest to Bond} & $-S_{t_0}$ &       & $S_{t_0}e^{r(t_2 - t_0)}$                           \\
+		\textit{Net Payoff}     & 0          &       & $S_{t_0}(e^{r(t_2 - t_0) - r(t_1 - t_0)})$          \\ \bottomrule
+		\end{tabular}
+		\end{table}
+		
+		Since we already assumed that $t_2 > t_1$, the net payoff $S_{t_0}(e^{r(t_2 - t_0) - r(t_1 - t_0)})$ is greater than zero. Therefore, by using the strategy above, we can make arbitrage profit.
+	\end{enumerate}
+\end{homeworkProblem}
 \end{document}
