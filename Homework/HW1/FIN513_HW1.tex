@@ -147,7 +147,7 @@
 \item
 Agree. Generally, low-growth stock gives higher dividend than high-growth stock. Since high-growth company needs more capital than low-growth company, the amount of retained earning might be larger than that of low-growth company. Therefore, the futures price of high-growth stock will be a less discount over the spot price.
 \item
-Agree.
+Disagree. Regardless of possibility of bankrupt, a portfolio which replicates payoff of forward can be constructed. Therefore, we do not have to care about bankrupt when pricing a forward contract.
 \item
 Agree. When constructing replicating portfolio which replicates the dynamics of value of derivatives to value the derivatives relatively, we assume self-financing. that means all dividends are reinvested. If price of stocks does not drop by the amount of the dividend per share, the value of position of replicating portfolio would be greater than the value of stock, and it contradicts the meaning of replicating portfolio.
 \end{enumerate}
@@ -178,12 +178,11 @@ Let $r_L^D$ denote dollar rates for lending, $r_L^E$ denote euro rates for lendi
 	At time $T$, the value of strategy (a) becomes -1 euro, which is identical to short position of forward contract. Therefore, if there is no arbitrage in market, the forward price should be equal to the value of strategy (b) at time $T$, which is $S_t^B (\frac{1 + 0.5 r_L^D}{1 + 0.5r_B^E})^{2(T-t)}$
 \end{enumerate}
 
-Since $r_L^D < r_B^D$, $r_L^E < r_B^E$ and $S_t^B < S_t^O$, the value of replicate portfolio of short position is less than that of long position. Therefore, the upper and lower bound of the contract is $S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ and $S_t^B (\frac{1 + 0.5 r_L^D}{1 + 0.5r_B^E})^{2(T-t)}$, respectively. The following table shows that the numerical results using parameters on the homework sheet.
+Since $r_L^D < r_B^D$, $r_L^E < r_B^E$ and $S_t^B < S_t^O$, the value of replicate portfolio of short position is less than that of long position. Therefore, the upper and lower bound of the contract is $S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ and $S_t^B (\frac{1 + 0.5 r_L^D}{1 + 0.5r_B^E})^{2(T-t)}$, respectively. Table \ref{tab:problem2} shows that the numerical results using parameters on the homework sheet.
 
 %% Table
 \begin{table}[]
 \centering
-\label{tab:problem2}
 \begin{tabular}{@{}ccc@{}}
 \toprule
 \textit{T}     & \textit{Lower Bound} & \textit{Upper Bound} \\ \midrule
@@ -191,6 +190,7 @@ Since $r_L^D < r_B^D$, $r_L^E < r_B^E$ and $S_t^B < S_t^O$, the value of replica
 \textit{5 yr}  & 1.4833               & 1.4993               \\
 \textit{10 yr} & 1.5218               & 1.5526               \\ \bottomrule
 \end{tabular}
+\caption{Lower bound and upper bound of forward price} \label{tab:problem2}
 \end{table}
 \end{homeworkProblem}
 
@@ -220,7 +220,6 @@ By netting out the values of strategy (1) and (2), there is no initial amount of
 \end{aligned}
 \end{equation*}
 Therefore, the fair price that a market maker would be willing to offer is 310.4596.
-
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -262,11 +261,10 @@ Therefore, the fair price that a market maker would be willing to offer is 310.4
 			\item Invest $S_{t_0}$ at rate $r$ with maturity $t_2$.
 			\item Close every position at time $t_2$.
 		\end{enumerate}
-		Since the interest is charged only for the position held overnight, the amount of interest at time $t_2$ would be $S_{t_0}e^{r(t_1  -t_0)}$, and that is important key to make an arbitrage opportunity. The following table describes the payoff from the strategy.
+		Since the interest is charged only for the position held overnight, the amount of interest at time $t_2$ would be $S_{t_0}e^{r(t_1  -t_0)}$, and that is important key to make an arbitrage opportunity. Table \ref{tab:problem5} describes the payoff from the strategy. Since we already assumed that $t_2 > t_1$, the net payoff $S_{t_0}(e^{r(t_2 - t_0) - r(t_1 - t_0)})$ is greater than zero. Therefore, by using the strategy above, we can make arbitrage profit.
 		
-		\begin{table}[h!]
+		\begin{table}[t]
 		\centering
-		\label{tab:problem5}
 		\begin{tabular}{@{}cccc@{}}
 		\toprule
 		\textit{Position/Time}  & $t_0$      & $t_1$ & $t_2$                                               \\ \midrule
@@ -275,9 +273,9 @@ Therefore, the fair price that a market maker would be willing to offer is 310.4
 		\textit{Invest to Bond} & $-S_{t_0}$ &       & $S_{t_0}e^{r(t_2 - t_0)}$                           \\
 		\textit{Net Payoff}     & 0          &       & $S_{t_0}(e^{r(t_2 - t_0) - r(t_1 - t_0)})$          \\ \bottomrule
 		\end{tabular}
+		\caption{Payoff structure of the strategy} \label{tab:problem5}
 		\end{table}
 		
-		Since we already assumed that $t_2 > t_1$, the net payoff $S_{t_0}(e^{r(t_2 - t_0) - r(t_1 - t_0)})$ is greater than zero. Therefore, by using the strategy above, we can make arbitrage profit.
 	\end{enumerate}
 \end{homeworkProblem}
 \end{document}
