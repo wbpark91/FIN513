@@ -147,9 +147,9 @@
 \item
 Agree. Generally, low-growth stock gives higher dividend than high-growth stock. Since high-growth company needs more capital than low-growth company, the amount of retained earning might be larger than that of low-growth company. Therefore, the futures price of high-growth stock will be a less discount over the spot price.
 \item
-Disagree. Regardless of possibility of bankrupt, a portfolio which replicates payoff of forward can be constructed. Therefore, we do not have to care about bankrupt when pricing a forward contract.
+Disagree. Regardless of possibility of bankrupt, a portfolio which replicates payoff of futures can be constructed. Therefore, we do not have to care about bankrupt when pricing futures.
 \item
-Agree. When constructing replicating portfolio which replicates the dynamics of value of derivatives to value the derivatives relatively, we assume self-financing. that means all dividends are reinvested. If price of stocks does not drop by the amount of the dividend per share, the value of position of replicating portfolio would be greater than the value of stock, and it contradicts the meaning of replicating portfolio.
+Agree. When constructing replicating portfolio which replicates the dynamics of value of derivatives to value the derivatives relatively, we assume self-financing. that means all dividends are reinvested. If price of stocks does not drop by the amount of the dividend per share, the value of position of replicating portfolio would be greater than the value of stock, and it contradicts the meaning of replicating portfolio.	%% Dividend changes spot price.
 \end{enumerate}
 
 %%\includegraphics[width=0.75\columnwidth]{example_figure} % Example image
@@ -162,23 +162,32 @@ Agree. When constructing replicating portfolio which replicates the dynamics of 
 \begin{homeworkProblem}%%[Exercise \#\arabic{homeworkProblemCounter}] % Custom section title
 Let $r_L^D$ denote dollar rates for lending, $r_L^E$ denote euro rates for lending, $r_B^D$ and $r_B^E$ denote dollar and euro rates for borrowing, respectively. Let $S_t^B$ and $S_t^O$ denote bid and offer exchange rate, respectively. In the following way, we can replicate long position and short position of dollar/euro forward.
 %%
-\begin{enumerate}[1)]
-\item \textit{Replicate Long Position}
-	\begin{enumerate}
-		\item Borrow $S_t^O \frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ dollars at rate $r_B^D$
-		\item Exchange $S_t^O \frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ dollars to $\frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ euros, then invest for time $T-t$ at rate $r_L^E$.
-	\end{enumerate}
+\begin{enumerate}[(a)]
+\item
+	\begin{enumerate}[1)]
+		\item \textit{Replicate Long Position}
+			\begin{enumerate}
+				\item Borrow $S_t^O \frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ dollars at rate $r_B^D$
+				\item Exchange $S_t^O \frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ dollars to $\frac{1}{(1 + 0.5r_L^E)^{2(T-t)}}$ euros, then invest for time $T-t$ at rate $r_L^E$.
+			\end{enumerate}
 	At time $T$, the value of strategy (a) becomes $-S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ dollars and the value of strategy (b) becomes 1 euro which perfectly replicates long position of forward contract. Since the initial values of two strategies are identical, the forward price $F_{t, T}$ should be equal to $S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ dollars.
 	
-\item \textit{Replicate Short Position}
-	\begin{enumerate}
-		\item Borrow $\frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ euros at rate $r_B^E$
-		\item Exchange $\frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ euros to $S_t^B \frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ dollars, then invest at rate $r_L^D$.
-	\end{enumerate}
+		\item \textit{Replicate Short Position}
+			\begin{enumerate}
+				\item Borrow $\frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ euros at rate $r_B^E$
+				\item Exchange $\frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ euros to $S_t^B \frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ dollars, then invest at rate $r_L^D$.
+			\end{enumerate}
 	At time $T$, the value of strategy (a) becomes -1 euro, which is identical to short position of forward contract. Therefore, if there is no arbitrage in market, the forward price should be equal to the value of strategy (b) at time $T$, which is $S_t^B (\frac{1 + 0.5 r_L^D}{1 + 0.5r_B^E})^{2(T-t)}$
-\end{enumerate}
+	\end{enumerate}
 
 Since $r_L^D < r_B^D$, $r_L^E < r_B^E$ and $S_t^B < S_t^O$, the value of replicate portfolio of short position is less than that of long position. Therefore, the upper and lower bound of the contract is $S_t^O (\frac{1 + 0.5r_B^D}{1 + 0.5r_L^E})^{2(T-t)}$ and $S_t^B (\frac{1 + 0.5 r_L^D}{1 + 0.5r_B^E})^{2(T-t)}$, respectively. Table \ref{tab:problem2} shows that the numerical results using parameters on the homework sheet.
+
+\item
+Since hedging a long position is equivalent to replicating short position, it is required to buy $\frac{1}{(1 + 0.5r_B^E)^{2(T-t)}}$ times notional amount of euros to hedge it. Therefore, the amount to buy spot euro is:
+	\begin{equation*}
+		10,000,000 \times \frac{1}{(1 + 0.5 \times 0.0325)^{20}} = 7,244,173.2450
+	\end{equation*}
+\end{enumerate}
 
 %% Table
 \begin{table}[]
@@ -193,6 +202,8 @@ Since $r_L^D < r_B^D$, $r_L^E < r_B^E$ and $S_t^B < S_t^O$, the value of replica
 \caption{Lower bound and upper bound of forward price} \label{tab:problem2}
 \end{table}
 \end{homeworkProblem}
+
+%% (b) 9.6580 mil euros for short.
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 3
@@ -227,16 +238,20 @@ Therefore, the fair price that a market maker would be willing to offer is 310.4
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}%%[Prob. \Roman{homeworkProblemCounter}] % Roman numerals
+%% 210,000
 \begin{enumerate}[(a)]
 	\item	%% Sub-Problem(a)
-	If firm L did not lend out stocks, they will get 1,000,000 dollars for dividend and pay $1,000,000 \times 0.3 \times 0.3 = 90,000$ dollars for tax. Therefore, the net cash flow from dividend is equal to 991,000 dollars. It means firm L would require at least \$991,000 plus loan fee for payment.
+	Since the loan has a fee of 25 basis points, lending 1,000,000 shares of stocks with loan fee is equivalent to lending 997,500 shares of stocks.
+	If firm L did not lend out stocks, they will get 997,500 dollars for dividend and pay $997,500 \times 0.3 \times 0.3 = 89,775$ dollars for tax. However, if the firm lend out stocks, they should pay $1,000,000 \times 0.3 = 300,000$ dollars for tax. Therefore, firm L would require at least $300,000 - 89,775 = 210,225$ dollars from firm H.
 	\item %% Sub-Problem(b)
 	Consider the following agreement.
 	\begin{enumerate}[(1)]
-		\item Firm L lend out 1,000,000 shares which is consistent with (a).
-		\item Firm H makes a repurchase agreement with firm E, which means firm H lend out 1,000,000 shares to firm E before dividend is paid, and get back after dividend is paid. This is possible since dividend schedule is certain.
+		\item Firm L lends 1,000,000 shares to broker.
+		\item Broker sells equal amount of shares to firm E, and make forward contracts to repurchase after dividends are paid. It is possible since dividend schedule is certain.
+		\item Firm E lends out 1,000,000 shares to firm H.
+		\item At maturity of forward contract, broker repurchase stocks and get back to firm L immediately.
 	\end{enumerate}
-	In this case, firm L does not have to pay tax because DRD is not applied. Unless the firm H pays premium larger than \$90,000, this contract is makes more profit for all firms. Firm E does not expose on any risk with respect to Google stock, firm L stays long and firm H stays short.
+	In this case, since the firm E has an ownership to stocks, E does not have to pay tax. Therefore, if the dividends are appropriately distributed for all parties, all firms would get more profit than (a).
 \end{enumerate}
 \end{homeworkProblem}
 
@@ -247,9 +262,9 @@ Therefore, the fair price that a market maker would be willing to offer is 310.4
 \begin{homeworkProblem}
 	\begin{enumerate}[(a)]
 	%% Sub-Problem (a)
-		\item Assume that the contract is closed at time $T$. The contract is equivalent to a contract in which person who is in long position would get a stock, and would pay $c$ and interest when the position is closed. Since we assumed that interest is debited or credited continuously, the total payment is equal to $ce^{r(T-t)}$. Like forward contract, we can replicate same payoff by taking long position to a stock, and borrowing the amount of money to buy a stock. At time $T$, the value of long position to a stock would be $S_T$ and the value of short position to bond would be $S_t^{r(T-t)}$. If there is no arbitrage in market, the value of short position to bond should be equal to the total payment in CFD. Therefore, the following equation should hold.
+		\item Assume that the contract is closed at time $T$. The contract is equivalent to a contract in which person who is in long position would get a stock, and would pay $c$ and interest when the position is closed. Since we assumed that interest is debited or credited continuously, the total payment is equal to $ce^{r(T-t)}$. Like forward contract, we can replicate same payoff by taking long position to a stock, and borrowing the amount of money to buy a stock. At time $T$, the value of long position to a stock would be $S_T$ and the value of short position to bond would be $S_te^{r(T-t)}$. If there is no arbitrage in market, the value of short position to bond should be equal to the total payment in CFD. Therefore, the following equation should hold.
 		\begin{equation*}
-			ce^{r(T-t)} = S_t^{r(T-t)}
+			ce^{r(T-t)} = S_te^{r(T-t)}
 		\end{equation*}
 		Therefore, the fair price of CFD is $c = S_t$. Otherwise, there would be arbitrage opportunities.
 	
@@ -263,7 +278,7 @@ Therefore, the fair price that a market maker would be willing to offer is 310.4
 		\end{enumerate}
 		Since the interest is charged only for the position held overnight, the amount of interest at time $t_2$ would be $S_{t_0}e^{r(t_1  -t_0)}$, and that is important key to make an arbitrage opportunity. Table \ref{tab:problem5} describes the payoff from the strategy. Since we already assumed that $t_2 > t_1$, the net payoff $S_{t_0}(e^{r(t_2 - t_0) - r(t_1 - t_0)})$ is greater than zero. Therefore, by using the strategy above, we can make arbitrage profit.
 		
-		\begin{table}[t]
+		\begin{table}[h]
 		\centering
 		\begin{tabular}{@{}cccc@{}}
 		\toprule

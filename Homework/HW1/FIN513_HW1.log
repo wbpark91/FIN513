@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.24)  22 JAN 2018 11:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.24)  25 JAN 2018 00:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -243,21 +243,27 @@ e
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (0.33894pt too wide) in paragraph at lines 186--187
+[]\OT1/cmr/m/n/10 Since hedg-ing a long po-si-tion is equiv-a-lent to repli-cat
+-ing short po-si-tion, it is re-quired to buy $[]$
+ []
+
+[2]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 184.
+               Default added (so using `tbp') on input line 193.
 
-[2] [3] [4] 
+[3] [4] 
 AED: lastpage setting LastPage
 [5] (./FIN513_HW1.aux) ) 
 Here is how much of TeX's memory you used:
  2577 strings out of 493014
  34666 string characters out of 6133351
- 203347 words of memory out of 5000000
+ 202347 words of memory out of 5000000
  6089 multiletter control sequences out of 15000+600000
  9667 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,43p,789b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,43p,790b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
@@ -271,7 +277,7 @@ r9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 >
-Output written on FIN513_HW1.pdf (5 pages, 138818 bytes).
+Output written on FIN513_HW1.pdf (5 pages, 138945 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
