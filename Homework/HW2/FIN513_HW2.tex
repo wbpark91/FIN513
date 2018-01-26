@@ -1,0 +1,225 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.5} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkTitle)} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework\ \#2} % Assignment title
+\newcommand{\hmwkDueDate}{Thursday,\ February\ 1,\ 2018} % Due date
+\newcommand{\hmwkClass}{FIN\ 513} % Course/class
+\newcommand{\hmwkClassTime}{9:30am} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Wanbae Park} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%%\newpage
+%%\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+	\item %% sub-problem (a)
+		\begin{enumerate}[(1)]
+		\item \textit{(Zero-coupon term structure)}
+			Since the bonds are traded at par and these are riskless, zero-coupon term-structure can be obtained by just equating present value of their cash flow to their price($ = 100$). Therefore, the following equation holds.
+			\begin{equation*}
+				100 = \sum_{t = 1}^{T} \frac{\text{\textit{Cash flows at time t}}}{(1 + r_{0, t})^t}
+			\end{equation*}
+			In order to obtain the whole term-structure, one should get $r_{0, t}$ first by equating the value of bond with maturity $t$ to present value of its cash flow first, then $r_{0, t+1}$ can be obtained by using $r_{0, t}$. It is because it is necessary to use $r_{0, t}$ to discount cash flows of bond maturing at $t+1$. Therefore, calculate $r_{0, 1}$ first.
+			\begin{equation*}
+				100 = \frac{100 + 100 \times 0.0133}{1 + r_{0, 1}} = \frac{100(1 + 0.0133)}{1 + r_{0, 1}}
+			\end{equation*}
+			It is trivial that $r_{0, 1}$ = 0.0133. Then, let's use this result to calculate $r_{0, 2}$.
+			\begin{equation*}
+				100 = \frac{100 \times 0.0173}{1 + 0.0133} + \frac{100 + 100 \times 0.0173}{(1 + r_{0.2})^2}
+			\end{equation*}
+			Then it is calculated that $r_{0, 2} = 0.01733$. Using this procedure ahead, zero-coupon term-structure from 1 year to 10 year can be obtained. Table \ref{tab:zcb termstructure} shows that the term structure of zero coupon bonds obtained by using this procedure.
+			
+			%% Zero-Coupon Bond Term Structures Table
+			\begin{table}[h]
+			\centering
+			\begin{tabular}{@{}cc@{}}
+			\toprule
+			Maturity(years) & $r_{0, t}$(\%) \\ \midrule
+			1               & 1.330          \\
+			2               & 1.733          \\
+			3               & 2.162          \\
+			4               & 2.577          \\
+			5               & 2.752          \\
+			6               & 3.196          \\
+			7               & 3.435          \\
+			8               & 3.459          \\
+			9               & 3.474          \\
+			10              & 3.562          \\ \bottomrule
+			\end{tabular}
+			\caption{Term structure of zero coupon bonds} \label{tab:zcb termstructure}
+			\end{table}
+		\item \textit{(Term-structure of one-year forward rates)}
+			Let $r_{0, t, t+1}$ denote a forward rate from time $t$ to $t+1$ determined at current time. Then $r_{0, t, t+1}$ can be obtained by comparing the following two strategies.
+			
+			\begin{enumerate}
+				\item Invest \$1 to zero coupon bond maturing at time $t$, and when the bond matures, receive money and reinvest to zero coupon bond maturing at time $t+1$.
+				\item Invest \$1 to zero coupon bond maturing at time $t+1$.
+			\end{enumerate}
+			
+			Since the amount of investment at current time is equal for both strategies, by definition of forward rate, the following equation should hold.
+			\begin{equation*}
+			\begin{aligned}
+				& (1 + r_{0, t+1})^{t+1} = (1 + r_{0, t})^t (1 + r_{0, t, t+1})	\\
+				& \Rightarrow r_{0, t, t+1} = \frac{(1 + r_{0, t+1})^{t+1}}{(1 + r_{0, t})^t} - 1
+			\end{aligned}
+			\end{equation*}
+			Therefore, since the term structure of spot rate is given above, by using this formula term structure of 1-year forward rate can be obtained. Table \ref{tab: 1-fwd termstructure} shows term structure of 1-year forward rate using the data given in assignment.
+			
+			%% 1-Year Forward Rate Term Structure
+			\begin{table}[h]
+			\centering
+			\begin{tabular}{@{}cc@{}}
+			\toprule
+			\textit{t} & $r_{0, t, t+1}$(\%) \\ \midrule
+			1 & 2.139               \\
+			2 & 3.025               \\
+			3 & 3.830               \\
+			4 & 3.459               \\
+			5 & 5.441               \\
+			6 & 4.881               \\
+			7 & 3.627               \\
+			8 & 3.592               \\
+			9 & 4.363               \\ \bottomrule
+			\end{tabular}
+			\caption{Term structure of 1-year forward rate} \label{tab: 1-fwd termstructure}	
+			\end{table}
+
+		\end{enumerate}
+	\item %% sub-problem (b)
+	\item %% sub-problem (c)	
+	\end{enumerate}
+
+\end{homeworkProblem}
+\end{document}
