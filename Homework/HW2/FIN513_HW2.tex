@@ -219,16 +219,76 @@
 		\end{enumerate}
 	\item %% sub-problem (b)
 		A fair swap rate $s$ is a rate which makes the present value of fixed leg and that of floating leg equal. Therefore, by calculating present values of each leg separately and equating each other, fair swap rate can be obtained. Let $X$ and $T$ denote the notional principal of swap and the maturity of swap, respectively. Then using the following procedure, fair swap rate $s$ can be obtained.
-		\begin{enumerate}	%% Calculate PV of fixed and floating leg
+		\begin{enumerate}[(1)]	%% Calculate PV of fixed and floating leg
 			\item \textit{(Fixed leg)}
 			Since there is no exchange of notional principal in IRS, present value of fixed leg can be obtained by solving following equation.
 				\begin{equation*}
 					\sum_{t = 1}^{T} \frac{sX}{(1 + r_{0, t})^t}
 				\end{equation*}
 			\item	\textit{(Floating leg)}
+			Cash flows of floating leg can be replicated by using the following investment strategies.
+			\begin{enumerate}
+				\item Invest $X$ amount of dollars to zero coupon bond maturing at time 1. When the bond matures, receive money and reinvest $X$ amount of dollars to zero coupon bond maturing at time 2, and repeat the procedure until time $T-1$.
+				\item Borrow zero coupon bond maturing at time $T$ with face value $X$.
+			\end{enumerate}
+			Using the strategies above, the initial value of floating leg is $X - \frac{X}{(1 + r_{0, T})^T}$.
 		\end{enumerate}
-	\item %% sub-problem (c)	
+		As mentioned above, a fair swap rate $s$ makes the present value of both position equal. Therefore, the following equation holds.
+		\begin{equation*}
+		\begin{aligned}
+			\sum_{t = 1}^{T} \frac{sX}{(1 + r_{0, t})^t} &= X - \frac{X}{(1 + r_{0, T})^T}	\\
+			\Rightarrow s &= \frac{1 - \frac{1}{(1 + r_{0, T})^T}}{\sum_{t = 1}^{T} \frac{1}{(1 + r_{0, t})^t}}		\\
+			&=\frac{1 - B_{0, T}}{\sum_{t = 1}^T B_{0, t}}
+		\end{aligned}
+		\end{equation*}
+		Since $1 - B_{0, T} = \sum_{t = 1}^T (B_{0, t-1} - B_{0, t}) = \sum_{t = 1}^T B_{0, t}(\frac{B_{0, t - 1}}{B_{0, t}} - 1) = \sum_{t = 1}^T B_{0, t} R^{f}_{0, t - 1, t}$, the equation $s = \frac{\sum_{t = 1}^T B_{0, t}R^{f}_{0, t - 1, t}}{\sum_{t = 1}^T B_{0, t}}$ also holds.
+		Using the equation, fair swap rates of any maturity can be calculated if sufficient data is given. Table \ref{tab:swap rate termstructure} shows term-structure of fair swap rate using given data.
+		
+		%% Term structure of swap rate
+		\begin{table}[h]
+		\centering
+		\begin{tabular}{@{}cc@{}}
+		\toprule
+		Maturity(year) & Swap Rate(\%) \\ \midrule
+		1              & 1.330         \\
+		2              & 1.730         \\
+		3              & 2.150         \\
+		4              & 2.550         \\
+		5              & 2.720         \\
+		6              & 3.130         \\
+		7              & 3.350         \\
+		8              & 3.380         \\
+		9              & 3.400         \\
+		10             & 3.480         \\ \bottomrule
+		\end{tabular}
+		\caption{Term structure of fair swap rate} \label{tab:swap rate termstructure}
+		\end{table}
+		
+	\item %% sub-problem (c)
+	Since I am a floating payor, the value of position is worth value of fixed leg minus value of floating leg. Let $s^*$, $X$ denote a swap rate and notional pricipal of the contract, respectively. Then the value of my position is $Xs^* \sum_{t = 1}^9 B_{0, t} - X(1 - B_{0, 9})$. Therefore, my position is worth $100 \times 0.0430 \sum_{t = 1}^9 B_{0, t} - 100(1 - B_{0, 9}) = 7.004$ million dollars. If the swap rate increases by 1 basis point(i.e. if the swap rate were 4.31\%), then by using the same formula, the value of my position would be worth 7.082 million dollars, which is 0.078 million dollars greater than the original value. In contrast, if the swap rate decreases by 1 basis point(i.e. if the swap rate were 4.29\%), then my position value would be worth 6.926 million dollars, which is 0.078 million dollars less than the original value.
 	\end{enumerate}
+\end{homeworkProblem}
 
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+	\item
+		Both companies will prefer the following contracts rather than the original contracts.
+		\begin{enumerate}[(1)]
+		\item \textit{(Company A)}
+			\begin{enumerate}
+				\item Make a loan with fixed rate 12.0\%
+				\item Make a swap contract with paying LIBOR and receiving 12.0\%.
+			\end{enumerate}
+		\item \textit{(Company B)}
+			\begin{enumerate}
+				\item Make a loan with floating rate LIBOR + 0.6\%.
+				\item Make a swap contract with paying 12.1\% and receiving LIBOR.
+			\end{enumerate}		
+		\end{enumerate}
+		By using the strategies above, the net rate where company A has to pay is 12.0\% + LIBOR - 12.0\% = LIBOR, which is less than the offered floating rate. Furthermore, the net rate company B has to pay is LIBOR + 0.6\% + 12.1\% - LIBOR = 12.7\%, which is also less than the offered fixed rate. Acting as an intermediary, the bank receives (LIBOR - 12.0\%) + (12.1\% - LIBOR) = 10 basis points. Therefore, since every firm makes more profit by making the contracts above, all of them will prefer these contracts rather than the original contracts.
+	\end{enumerate}
 \end{homeworkProblem}
 \end{document}
