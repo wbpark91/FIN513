@@ -44,7 +44,8 @@
 \pagestyle{fancy}
 \lhead{\hmwkAuthorName} % Top left header
 \chead{\hmwkClass\ (\hmwkTitle)} % Top center header
-\rhead{\firstxmark} % Top right header
+%%\rhead{\firstxmark} 
+\rhead{} % Top right header
 \lfoot{\lastxmark} % Bottom left footer
 \cfoot{} % Bottom center footer
 \rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
@@ -313,18 +314,24 @@
 %	PROBLEM 3
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
-
+It cannot be reconciled with the conclusion in the lecture. Assume that there is a swap contract between total return on a portfolio of telecom sector and EURIBOR minus a fee $f$ and there is no restriction on short selling. Under these assumptions, there exist an arbitrage opportunities for investment bank by implementing the following strategies.
+	\begin{enumerate}
+		\item Enter the swap by receiving total return on a portfolio of telecom sector and paying EURIBOR $- f$ on notional amount $X$.
+		\item Sell $X$ amount of a portfolio of telecom sector short.
+		\item Deposit $X$ amount of euros on EURIBOR.
+	\end{enumerate}
+As long as the funding management company does not default, the investment bank will receive $X \times f$ amount of euros at every payment date without risk. Since there is no initial investment to implement the strategies above, the strategies make arbitrage profit for investment bank, hence contradiction occurs.
 \end{homeworkProblem}
 %----------------------------------------------------------------------------------------
 %	PROBLEM 4
 %----------------------------------------------------------------------------------------
-\begin{homeworkProblem}
+\begin{homeworkProblem}	%% Agree
 \textbf{I agree.} As long as the value of both sides of swap is equal(i.e. as long as the swap contract is fair), It is always profitable to enter the contract. Assuming that short position of S\&P 500 and government bonds is possible, it is possible to replicate payoffs of swap contract by taking long position of one side and taking short position of the other side, and there is no initial cost to construct the replicating portfolio. Consequently, since some positive fee is given by entering into the return swap, it is possible to make profits regardless of market fluctuation.
 \end{homeworkProblem}
 %----------------------------------------------------------------------------------------
 %	PROBLEM 5
 %----------------------------------------------------------------------------------------
-\begin{homeworkProblem}
-
+\begin{homeworkProblem}	%% Agree
+\textbf{I agree.} If the counterparty goes bankrupt, there would be remedies. Remedies would be calculated as present value of the remaining swap(or less). Since swap rate of the contract is 5\% and the current swap rate is 3\%, present value of remaining swap(for floating receivor) is calculated as $\sum_{t = 1}^2 (3\% - 5\%) B_{0, t}$ (times notional amount). Therefore, ignoring time value of money, the floating rate receivor should pay at most 4\% of the swap's notional value.
 \end{homeworkProblem}
 \end{document}
