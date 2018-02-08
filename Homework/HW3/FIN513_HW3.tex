@@ -1,0 +1,223 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.5} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkTitle)} % Top center header
+%%\rhead{\firstxmark} 
+\rhead{} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework\ \#3} % Assignment title
+\newcommand{\hmwkDueDate}{Tuessday,\ February\ 13,\ 2018} % Due date
+\newcommand{\hmwkClass}{FIN\ 513} % Course/class
+\newcommand{\hmwkClassTime}{9:30am} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Wanbae Park} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%%\newpage
+%%\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+	The put-call parity of American options on a currency is $e^{-r_f(T - t)}S - K \leq C - P \leq S - e^{-r_d(T-t)}K$ or $B^f S - K \leq C - P \leq S - B^dK$, where $S$ and $K$ denotes spot exchange rate and strike price as usual, $r_d$ and $r_f$ denotes domestic risk-free rate and foreign risk-free rate, respectively.	\\
+	\\
+	\textit{(Proof)} Suppose not.
+	\begin{enumerate}
+		\item Suppose $C - P > S - e^{-r_d(T - t)}K$. Then an arbitrage opportunity exists by constructing the following portfolio.
+		\begin{enumerate}
+			\item Buy a put option and a unit of foreign currency.
+			\item Write a call option and borrow $e^{-r_d(T - t)}K$ amount of domestic currency on risk-free rate.
+		\end{enumerate}
+		All possible situations can be separated by two cases: early exercise of written option occurs and no early exercise of written option. Assuming that early exercise occurs at $t^* < T$, payoff of the portfolio is as follows.
+		\begin{enumerate}[\text{\textit{Case}} 1.]
+		\item Early exercise at $t^* < T$.
+			\begin{enumerate}[(a)]
+				\item $e^{r_f(t^* - t)}S_{t^*}$
+				\item $-(S_{t^*} - K)  - e^{-r_d(T - t^*)}K$
+			\end{enumerate}
+			The sum of payoff from two strategies is $(e^{r_f(t^* - t)} - 1)S_{t^*} + (1 - e^{-r_d(T - t^*)})K$, which is positive.
+		\item No early exercise
+			\begin{enumerate}
+				\item $S_T > K$
+				\begin{enumerate}[(a)]
+					\item $0 + e^{r_f(T - t)}S_T$
+					\item $-(S_T - K) - K$
+				\end{enumerate}
+				\item $S_T \leq K$
+				\begin{enumerate}[(a)]
+					\item $(K - S_T) + e^{r_f(T - t)}S_T$
+					\item $0 - K$
+				\end{enumerate}
+			\end{enumerate}
+			In this case, the portfolio also has a positive payoff regardless of spot exchange rate at maturity.
+		\end{enumerate}
+		Since the portfolio has a positive payoff at all possible situations, there must be a cost for implementing the strategies if there is no arbitrage opportunity. However, by the assumption, the initial cost for constructing portfolio is negative, so a contradiction occurs. Therefore, $C - P \leq S - e^{-r_d(T - t)}K$ must hold.
+%----------------------------------------------------------------------------------------
+		\item Suppose $C - P < e^{-r_f(T - t)}S - K$. Then there is also an arbitrage opportunity exists considering the following portfolio.
+		\begin{enumerate}
+			\item Buy a call option and invest K amount of domestic currencies on domestic risk-free rate.
+			\item Write a put option and sell short a foreign risk-free zero coupon bond.
+		\end{enumerate}
+	\end{enumerate}
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+\begin{enumerate}[(a)]
+	\item
+	\item
+	\item
+	\item
+	\item
+	\item
+	\item
+	\item
+\end{enumerate}
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+\begin{enumerate}[(a)]
+	\item
+	\item
+	\item
+	\item
+\end{enumerate}
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+\begin{enumerate}[(a)]
+	\item
+	\item
+\end{enumerate}
+\end{homeworkProblem}
+\end{document}
