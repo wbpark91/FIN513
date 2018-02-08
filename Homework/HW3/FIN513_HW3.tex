@@ -155,13 +155,13 @@
 		\end{enumerate}
 		All possible situations can be separated by two cases: early exercise of written option occurs and no early exercise of written option. Assuming that early exercise occurs at $t^* < T$, payoff of the portfolio is as follows.
 		\begin{enumerate}[\text{\textit{Case}} 1.]
-		\item Early exercise at $t^* < T$.
+		\item Early exercise at $t^* < T$ occurs.
 			\begin{enumerate}[(a)]
 				\item $e^{r_f(t^* - t)}S_{t^*}$
 				\item $-(S_{t^*} - K)  - e^{-r_d(T - t^*)}K$
 			\end{enumerate}
 			The sum of payoff from two strategies is $(e^{r_f(t^* - t)} - 1)S_{t^*} + (1 - e^{-r_d(T - t^*)})K$, which is positive.
-		\item No early exercise
+		\item No early exercise.
 			\begin{enumerate}
 				\item $S_T > K$
 				\begin{enumerate}[(a)]
@@ -183,7 +183,32 @@
 			\item Buy a call option and invest K amount of domestic currencies on domestic risk-free rate.
 			\item Write a put option and sell short a foreign risk-free zero coupon bond.
 		\end{enumerate}
+		By using similar procedure above, existence of arbitrage can be derived.
+		\begin{enumerate}[\text{\textit{Case}} 1.]
+			\item Early exercise at $t^* < T$ occurs.
+			\begin{enumerate}[(a)]
+				\item $e^{rt^*}K$
+				\item $-(K - S_{t^*}) - e^{-r_f(T - t^*)}S_{t^*}$
+			\end{enumerate}
+			In this case, the sum of payoff from two strategies above is $S_{t^*}(1 - e^{-r_f(T - t^*)}) - (e^{rt^*} - 1)K$, which is positive.
+			\item No early exercise.
+			\begin{enumerate}
+				\item $S_T > K$
+				\begin{enumerate}[(a)]
+					\item $(S_T - K) + e^{rT}K$
+					\item $0 - S_T$
+				\end{enumerate}
+				\item $S_T \leq K$
+				\begin{enumerate}[(a)]
+					\item $0 + e^{rT}K$
+					\item $-(K - S_T) - S_T$
+				\end{enumerate}
+			\end{enumerate}
+			At the maturity, the portfolio has a positive value regardless of spot exchange rate at $T$.
+		\end{enumerate}
+		Since the portfolio has a positive payoff at all possible situations, there is an arbitrage opportunity since we assumed that there is a negative initial cost for constructing this portfolio. Therefore, $C - P \geq e^{-r_f(T - t)}S - K$ must hold.
 	\end{enumerate}
+	Combining all results above, the put-call parity mentioned above must hold. Otherwise, there would be an arbitrage opportunity.
 \end{homeworkProblem}
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2

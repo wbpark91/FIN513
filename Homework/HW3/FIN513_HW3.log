@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  8 FEB 2018 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  8 FEB 2018 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -251,9 +251,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--151
 
  []
 
-[2] 
+[2] [3] 
 AED: lastpage setting LastPage
-[3] (./FIN513_HW3.aux) ) 
+[4] (./FIN513_HW3.aux) ) 
 Here is how much of TeX's memory you used:
  2533 strings out of 492990
  34234 string characters out of 6132637
@@ -274,10 +274,10 @@ sy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb>
-Output written on FIN513_HW3.pdf (3 pages, 111035 bytes).
+Output written on FIN513_HW3.pdf (4 pages, 113376 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
