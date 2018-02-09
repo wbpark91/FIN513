@@ -195,12 +195,12 @@
 			\begin{enumerate}
 				\item $S_T > K$
 				\begin{enumerate}[(a)]
-					\item $(S_T - K) + e^{rT}K$
+					\item $(S_T - K) + e^{r(T - t)}K$
 					\item $0 - S_T$
 				\end{enumerate}
 				\item $S_T \leq K$
 				\begin{enumerate}[(a)]
-					\item $0 + e^{rT}K$
+					\item $0 + e^{r(T - t)}K$
 					\item $-(K - S_T) - S_T$
 				\end{enumerate}
 			\end{enumerate}
@@ -215,14 +215,23 @@
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
 \begin{enumerate}[(a)]
-	\item
-	\item
-	\item
-	\item
-	\item
-	\item
-	\item
-	\item
+	\item %%(a)
+	\textbf{False.} Even if $c(K, T) > S_t$, in order to lock arbitrage profit in, it needs to trade underlying asset. However, in this case, underlying asset is not tradable, constructing arbitrage portfolio is impossible.
+%----------------------------------------------------------------------------------------
+	\item %%(b)
+	\textbf{True.} Suppose $p(K, T) > B_{t, T} \cdot  K$. Then by selling short a put option with strike price $K$ and maturity $T$, and buying a zero coupon bond with face value $K$ and maturity $T$. 
+%----------------------------------------------------------------------------------------
+	\item %%(c)
+%----------------------------------------------------------------------------------------
+	\item %%(d)
+%----------------------------------------------------------------------------------------
+	\item %%(e)
+%----------------------------------------------------------------------------------------
+	\item %%(f)
+%----------------------------------------------------------------------------------------
+	\item %%(g)
+%----------------------------------------------------------------------------------------
+	\item %%(h)
 \end{enumerate}
 \end{homeworkProblem}
 %----------------------------------------------------------------------------------------
@@ -252,7 +261,20 @@
 \begin{homeworkProblem}
 \begin{enumerate}[(a)]
 	\item
+	There is an arbitrage opportunity. Since the probabilities mentioned are exact, there is just two possibilities that stock price moves up to \$120 or down to \$90, so if someone sell short a call option with strike price 120, then there would be an arbitrage because the price of call option is positive and there is no amount pay at maturity with certainty. 
 	\item
+	As long as the statistical probabilities are true, using the idea of binomial tree, option price should be equal to followings.
+	\begin{equation*}
+	\begin{aligned}
+		c(100) 	&= e^{-0.06 \times \frac{1}{12}}(0.4 \times 20 + 0.6 \times 0)	\\
+				&= 7.96	\\
+		c(110) 	&= e^{-0.06 \times \frac{1}{12}}(0.4 \times 10 + 0.6 \times 0)	\\
+				&= 3.9	\\
+		c(120) 	&= e^{-0.06 \times \frac{1}{12}}(0.4 \times 0 + 0.6 \times 0)	\\	
+				&= 0	
+	\end{aligned}
+	\end{equation*}
+	However, it is completely different from the price of options traded in the market. There are two possibilities that makes deviation between theoretical prices and market prices. First, there would be differences between statistical probabilities and market-implied probabilities. One main reason why $c(100)$ and $c(110)$ using statistical probabilities is higher than market prices is because relatively higher (statistical) probability is allocated to the state that stock prices moves up to 120. In other words, if a probability less than 0.4 is allocated to the state in which stock price goes up to 120, $c(100)$ and $c(110)$ would be closer to the market price. Second, there would be more states rather than two states. Regarding the statistical probabilities, there are just two states, and under those states $c(120)$ is always equal to zero whatever probabilities are allocated to. It means that market prices of option imply that there are more states than statistical view, especially states that stocks price will be larger than 120. Summing up, statistical probabilities assumes more simple states than market implied view, and allocate more probabilities to states that stock prices are larger than 100.
 \end{enumerate}
 \end{homeworkProblem}
 \end{document}
