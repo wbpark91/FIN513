@@ -219,19 +219,39 @@
 	\textbf{False.} Even if $c(K, T) > S_t$, in order to lock arbitrage profit in, it needs to trade underlying asset. However, in this case, underlying asset is not tradable, constructing arbitrage portfolio is impossible.
 %----------------------------------------------------------------------------------------
 	\item %%(b)
-	\textbf{True.} Suppose $p(K, T) > B_{t, T} \cdot  K$. Then by selling short a put option with strike price $K$ and maturity $T$, and buying a zero coupon bond with face value $K$ and maturity $T$. 
+	\textbf{True.} Suppose $p(K, T) > B_{t, T} \cdot  K$. Then by selling short a put option with strike price $K$ and maturity $T$, and buying a zero coupon bond with face value $K$ and maturity $T$. Note that there is a negative initial cost. If a spot price is larger than strike price at maturity, the payoff of portfolio would be equal to $K > 0$. Otherwise, the payoff would be equal to $-(K - S_T) + K = S_T$, which is also positive. Therefore, even if underlying asset is not tradable, by making a transaction of options and bonds, it is possible to make arbitrage profit.
 %----------------------------------------------------------------------------------------
 	\item %%(c)
+	\textbf{False.} Suppose $c(K, T_1) > c(K, T_2)$. Based on the principle of `buy low, sell high', construct a portfolio by selling short $c(K, T_1)$ and buying $c(T, K_2)$. If spot price at $T_1$ is less than $K$, net profit would be positive since the written option would not be exercised. In contrast, if spot price at $T_1$ is greater than $K$, a negative payoff $K - S_T$ would be generated, and to make an arbitrage profit, it needs to deal with this payoff. Since the portfolio consists of a call option maturing at $T_2$, selling short an underlying asset and investing $K$ amount of dollars on risk free rate would make an arbitrage profit. However, since the underlying asset is non-tradable, implementing this strategy is impossible. It means that even if $c(K, T_1) > c(K, T_2)$, locking in an arbitrage profit is impossible.
 %----------------------------------------------------------------------------------------
 	\item %%(d)
+	\textbf{False.} The put-call parity assumes that tradable underlying asset. Since it is impossible to trade the underlying asset, put call parity does not hold.
 %----------------------------------------------------------------------------------------
 	\item %%(e)
+	\textbf{True.} Regardless of spot value, it is possible to make positive payoff by selling short two $c(K_1, T)$, and buying a $c(K_0, T)$ and $c(K_2, T)$. Since the strategy does not contain any underlying asset, if $c(K_0, T) - 2(K_1, T) + c(K_2, T) \leq 0$, it is possible to make an arbitrage profit without trading underlying asset. Therefore, $c(K_0, T) - 2(K_1, T) + c(K_2, T)$ should be positive.
 %----------------------------------------------------------------------------------------
 	\item %%(f)
+	\textbf{False.} If $c(K_2, T) \geq c(K_1, T)$, then arbitrage is possible. Construct a portfolio by selling short a $c(K_2, T)$ and buying a $c(K_1, T)$. Then it is possible to make an arbitrage profit. Table \ref{tab:prob2(f)-payoff} shows details about arbitrage profit.
+%----------------------------------------------------------------------------------------
+	%% PAYOFF TABLE
+	\begin{table}[h]
+	\centering
+	\label{my-label}
+	\begin{tabular}{@{}cccc@{}}
+	\toprule
+                    & $S_T < K_1$ & $K_1 \leq S_T < K_2$ & $K_2 \leq S_T$ \\ \midrule
+	\textit{Long call}  & 0           & $S_T - K_1$          & $S_T - K_1$    \\
+	\textit{Short call} & 0           & 0                    & $-(S_T - K_2)$ \\	\midrule
+	\textit{Sum}        & 0           & $S_T - K_1$          & $K_2 - K_1$    \\ \bottomrule
+	\end{tabular}
+	\caption{Payoff of portfoliio}	\label{tab:prob2(f)-payoff}
+	\end{table}
 %----------------------------------------------------------------------------------------
 	\item %%(g)
+	\textbf{False.} Proving $p(K, T) \geq \text{max}(B_{t, T} \cdot K - S_t, 0)$ is equivalent to proving $p(K, T) \geq B_{t, T} \cdot K - S_t$ since option price is always greater than zero. Nevertheless, even though $p(K, T) \leq B_{t, T} \cdot K - S_t$, it is impossible to make an arbitrage profit. Since the formula contains $S_t$, it is inevitable to transact underlying asset to make an arbitrage profit. Therefore, since the underlying asset is non-tradable, making an arbitrage profit is impossible in this case.
 %----------------------------------------------------------------------------------------
 	\item %%(h)
+	\textbf{True.} Suppose $C(K, T) < c(K, T)$. Then by selling short European option and buying equal amount of American option, it is possible to make an arbitrage profit. It is because it is always possible to net European payoff out by exercising American option at maturity. Therefore, $C(K, T) \geq c(K, T)$ must hold.
 \end{enumerate}
 \end{homeworkProblem}
 %----------------------------------------------------------------------------------------
@@ -274,7 +294,7 @@
 				&= 0	
 	\end{aligned}
 	\end{equation*}
-	However, it is completely different from the price of options traded in the market. There are two possibilities that makes deviation between theoretical prices and market prices. First, there would be differences between statistical probabilities and market-implied probabilities. One main reason why $c(100)$ and $c(110)$ using statistical probabilities is higher than market prices is because relatively higher (statistical) probability is allocated to the state that stock prices moves up to 120. In other words, if a probability less than 0.4 is allocated to the state in which stock price goes up to 120, $c(100)$ and $c(110)$ would be closer to the market price. Second, there would be more states rather than two states. Regarding the statistical probabilities, there are just two states, and under those states $c(120)$ is always equal to zero whatever probabilities are allocated to. It means that market prices of option imply that there are more states than statistical view, especially states that stocks price will be larger than 120. Summing up, statistical probabilities assumes more simple states than market implied view, and allocate more probabilities to states that stock prices are larger than 100.
+	However, it is totally different from the price of options traded in the market. There are two possibilities that makes deviation between theoretical prices and market prices. First, there would be differences between statistical probabilities and market-implied probabilities. One main reason why $c(100)$ and $c(110)$ using statistical probabilities is higher than market prices is because relatively higher (statistical) probability is allocated to the state that stock prices moves up to 120. In other words, if a probability less than 0.4 is allocated to the state in which stock price goes up to 120, $c(100)$ and $c(110)$ would be closer to the market price. Second, there would be more states rather than two states. Regarding the statistical probabilities, there are just two states, and under those states $c(120)$ is always equal to zero whatever probabilities are allocated to. It means that market prices of option imply that there are more states than statistical view, especially states that stocks price will be larger than 120. Summing up, statistical probabilities assumes more simple states than market implied view, and allocate more probabilities to states that stock prices are larger than 100.
 \end{enumerate}
 \end{homeworkProblem}
 \end{document}
