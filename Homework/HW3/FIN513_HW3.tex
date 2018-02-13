@@ -102,7 +102,7 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\hmwkTitle}{Homework\ \#3} % Assignment title
-\newcommand{\hmwkDueDate}{Tuessday,\ February\ 13,\ 2018} % Due date
+\newcommand{\hmwkDueDate}{Tuesday,\ February\ 13,\ 2018} % Due date
 \newcommand{\hmwkClass}{FIN\ 513} % Course/class
 \newcommand{\hmwkClassTime}{9:30am} % Class/lecture time
 \newcommand{\hmwkAuthorName}{Wanbae Park} % Your name
@@ -190,7 +190,7 @@
 				\item $e^{rt^*}K$
 				\item $-(K - S_{t^*}) - e^{-r_f(T - t^*)}S_{t^*}$
 			\end{enumerate}
-			In this case, the sum of payoff from two strategies above is $S_{t^*}(1 - e^{-r_f(T - t^*)}) - (e^{rt^*} - 1)K$, which is positive.
+			In this case, the sum of payoff from two strategies above is $S_{t^*}(1 - e^{-r_f(T - t^*)}) + (e^{rt^*} - 1)K$, which is positive.
 			\item No early exercise.
 			\begin{enumerate}
 				\item $S_T > K$
@@ -281,20 +281,9 @@
 \begin{homeworkProblem}
 \begin{enumerate}[(a)]
 	\item
-	There is an arbitrage opportunity. Since the probabilities mentioned are exact, there is just two possibilities that stock price moves up to \$120 or down to \$90, so if someone sell short a call option with strike price 120, then there would be an arbitrage because the price of call option is positive and there is no amount pay at maturity with certainty. 
+	There is an arbitrage opportunity. Assuming the statistical probabilities are true, there is no chance that stock price becomes between 100 and 120. However, if a portfolio is constructed such that it has two long position of call option with strike price 110 and a long position of call option with strike 100 and 120 each(It is equivalent to sell short butterflies), it is possible to make arbitrage profit since the initial cost for constructing portfolio is negative(cash inflow of 0.25 for each portfolio) and there is no chance for cash outflow at maturity.
 	\item
-	As long as the statistical probabilities are true, using the idea of binomial tree, option price should be equal to followings.
-	\begin{equation*}
-	\begin{aligned}
-		c(100) 	&= e^{-0.06 \times \frac{1}{12}}(0.4 \times 20 + 0.6 \times 0)	\\
-				&= 7.96	\\
-		c(110) 	&= e^{-0.06 \times \frac{1}{12}}(0.4 \times 10 + 0.6 \times 0)	\\
-				&= 3.9	\\
-		c(120) 	&= e^{-0.06 \times \frac{1}{12}}(0.4 \times 0 + 0.6 \times 0)	\\	
-				&= 0	
-	\end{aligned}
-	\end{equation*}
-	However, it is totally different from the price of options traded in the market. There are two possibilities that makes deviation between theoretical prices and market prices. First, there would be differences between statistical probabilities and market-implied probabilities. One main reason why $c(100)$ and $c(110)$ using statistical probabilities is higher than market prices is because relatively higher (statistical) probability is allocated to the state that stock prices moves up to 120. In other words, if a probability less than 0.4 is allocated to the state in which stock price goes up to 120, $c(100)$ and $c(110)$ would be closer to the market price. Second, there would be more states rather than two states. Regarding the statistical probabilities, there are just two states, and under those states $c(120)$ is always equal to zero whatever probabilities are allocated to. It means that market prices of option imply that there are more states than statistical view, especially states that stocks price will be larger than 120. Summing up, statistical probabilities assumes more simple states than market implied view, and allocate more probabilities to states that stock prices are larger than 100.
-\end{enumerate}
+	The statistical probabilities assumes that there is no possibility that stock price becomes between 90 and 120. However, as mentioned in (a), market price of a claim which guarantees positive payoff when stock prices becomes between 100 and 120 is positive. It implies there is a positive (risk-neutral) probability that stock price becomes between 90 and 120. In other words, statistical probabilities and market implied probabilities differ.
+	\end{enumerate}
 \end{homeworkProblem}
 \end{document}
