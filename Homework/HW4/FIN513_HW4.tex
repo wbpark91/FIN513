@@ -29,6 +29,8 @@
 \usepackage{enumerate}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{tikz}
 
 % Margins
 \topmargin=-0.45in
@@ -96,7 +98,22 @@
 }{
 \enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
 }
-   
+
+%----------------------------------------------------------------------------------------
+%	BINOMIAL TREE
+%----------------------------------------------------------------------------------------
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=4cm, sibling distance=3.5cm,->]
+\tikzstyle{level 2}=[level distance=4cm, sibling distance=2cm,->]
+ 
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=2em, text centered]
+\tikzstyle{end} = []
+ 
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels.    
 %----------------------------------------------------------------------------------------
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
@@ -207,5 +224,198 @@
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
 \end{homeworkProblem}
-
+\begin{enumerate}[a.]
+	\item
+	Using the formula $u = e^{\sigma \Delta t}$, $d = 1/ u$, a tree is constructed(Figure \ref{tree:prob5-stockprice}). However, since volatility changes at each nodes, $u$ and $d$ changes(as shown on Figure \ref{tree:prob5-vol and u}), it does no longer recombines, consequently.
+%----------------------------------------------------------------------------------------
+	%% STOCK PRICE TREE
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[grow=right, sloped]
+	\node[bag] {20}
+     	child {
+        	 node[bag] {12.13}        
+        	     child {
+        	         node[end, label=right:
+        	             {6.38}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below]  {}
+        	     }
+        	     child {
+        	         node[end, label=right:
+        	             {23.05}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below] {}
+        	     }
+        	     edge from parent 
+        	     node[above] {}
+        	     node[below]  {}
+     	}
+     	child {
+        	 node[bag] {32.97}        
+        	 child {
+        	         node[end, label=right:
+        	             {22.34}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below]  {}
+        	     }
+        	     child {
+        	         node[end, label=right:
+        	             {48.67}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below]  {}
+        	     }
+        	 edge from parent         
+        	     node[above] {}
+        	     node[below]  {}
+     	};
+	\end{tikzpicture}
+	\caption{Stock price tree}
+	\label{tree:prob5-stockprice}
+	\end{figure}
+%----------------------------------------------------------------------------------------
+	%% VOLATILITY AND U TREE
+	\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.4\linewidth}
+		\begin{tikzpicture}[grow=right, sloped]
+		\node[bag] {0.5}
+     		child {
+        	 	node[bag] {0.6420}       
+        	 	    edge from parent 
+    	    	     node[above] {}
+        		     node[below]  {}
+    		 }
+		     child {
+    	    	 node[bag] {0.3894}        
+    	    	 edge from parent         
+      	  	     node[above] {}
+     	   	     node[below]  {}
+    	 	};
+		\end{tikzpicture}%
+		\caption{Volatility Tree}
+		\label{tree:prob5-volatility}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\linewidth}
+	\begin{tikzpicture}[grow=right, sloped]
+	\node[bag] {1.649}
+	     child {
+       	  node[bag] {1.900}       
+        	     edge from parent 
+        	     node[above] {}
+        	     node[below]  {}
+     	}
+	     child {
+        	 node[bag] {1.476}        
+        	 edge from parent         
+        	     node[above] {}
+        	     node[below]  {}
+     	};
+	\end{tikzpicture}
+	\caption{$u$ Tree}
+	\end{subfigure}
+	\label{tree:prob5-u}
+	\caption{Volatility and $u$}
+	\label{tree:prob5-vol and u}
+	\end{figure}
+%----------------------------------------------------------------------------------------
+	Since there are 4 states at period 2, there are four possible returns and corresponding probabilities. Tables \ref{tab:returns and probs} represents returns and probabilities at each states.
+%----------------------------------------------------------------------------------------
+	%% RETURNS AND PROBS
+	\begin{table}[]
+	\centering
+	\label{my-label}
+	\begin{tabular}{@{}ccc@{}}
+	\toprule
+	\textit{Stock Price} & \textit{Return($r$)} & \textit{Probability($p$)} \\ \midrule
+	48.67                & 1.434           & 0.3025               \\
+	22.34                & 0.117           & 0.2475               \\
+	23.05                & 0.153           & 0.2475               \\
+	6.38                 & -0.681          & 0.2025               \\ \bottomrule
+	\end{tabular}
+	\caption{Returns and probabilities at each state}
+	\label{tab:returns and probs}
+	\end{table}
+	From the table, since returns and probabilities at each state are given, it is possible to calculate expected return and variance. Expected return is calculated as $\mathrm{E}(r) = \sum_{i = 1}^4 r_i p_i = 1.434 \times 0.3025 + 0.117 \times 0.2475 + 0.153 \times 0.2475 -0.681 \times 0.2025 = 36.25\%$, Variance is calculated as $\mathrm{Var}(r) = \sum_{i = 1}^4 (r_i - \mathrm{E}(r))^2 = 59.33\%$. Therefore, standard deviation is equal to $\sqrt{59.33}\% = 77.03\%$, and annualized variance and volatility is equal to $29.67\%$ and $54.47\%$, respectively.
+	%%
+	\item
+	Since the volatility changes at each node, risk neutral probability $q$ would change at each nodes, and it affects value of the option. Figure \ref{tree:prob5-risk-neutral probs} represents risk-neutral probabilities at each node.
+	%% RISK-NEUTRAL PROB TREE
+	\begin{figure}[h]
+	\centering
+		\begin{tikzpicture}[grow=right, sloped]
+		\node[bag] {0.3872}
+     		child {
+        	 	node[bag] {0.3521}       
+        	 	    edge from parent 
+    	    	     node[above] {}
+        		     node[below]  {}
+    		 }
+		     child {
+    	    	 node[bag] {0.4164}        
+    	    	 edge from parent         
+      	  	     node[above] {}
+     	   	     node[below]  {}
+    	 	};
+		\end{tikzpicture}
+		\caption{Risk-neutral probabilities}
+		\label{tree:prob5-risk-neutral probs}
+	\end{figure}
+	Using risk-neutral probabilities at each node and backward induction formula $c = \frac{1}{1 + r_f}(q \times c_u + (1 - q) \times c_d)$, it is possible to value the call option. ($c$ = value of option at previous node, $c_u$, and $c_d$ represents value of option at up-state and down-state. $r_f$ is risk-free rate.)
+%----------------------------------------------------------------------------------------
+	%% OPTION PRICE TREE
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[grow=right, sloped]
+	\node[bag] {5.696}
+     	child {
+        	 node[bag] {1.064}        
+        	     child {
+        	         node[end, label=right:
+        	             {0}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below]  {}
+        	     }
+        	     child {
+        	         node[end, label=right:
+        	             {3.052}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below] {}
+        	     }
+        	     edge from parent 
+        	     node[above] {}
+        	     node[below]  {}
+     	}
+     	child {
+        	 node[bag] {13.174}        
+        	 child {
+        	         node[end, label=right:
+        	             {2.339}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below]  {}
+        	     }
+        	     child {
+        	         node[end, label=right:
+        	             {28.673}] {}
+        	         edge from parent
+        	         node[above] {}
+        	         node[below]  {}
+        	     }
+        	 edge from parent         
+        	     node[above] {}
+        	     node[below]  {}
+     	};
+	\end{tikzpicture}
+	\caption{Option price tree}
+	\label{tree:prob5-optionprice}
+	\end{figure}
+%----------------------------------------------------------------------------------------
+\end{enumerate}
 \end{document}
