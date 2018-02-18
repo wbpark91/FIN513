@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  17 FEB 2018 20:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  17 FEB 2018 20:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,25 +464,29 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
+)
 \c@homeworkProblemCounter=\count126
  (./FIN513_HW4.aux)
 \openout1 = `FIN513_HW4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 143.
+(lastpage)             ! on input line 144.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -559,74 +563,74 @@ Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 275--275
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 276--276
  [][][][]\OT1/cmr/m/n/10 12.13 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 275--275
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 276--276
  [][][][]\OT1/cmr/m/n/10 32.97 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 298--298
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 299--299
  [][][][]\OT1/cmr/m/n/10 0.6420 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 298--298
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 299--299
  [][][][]\OT1/cmr/m/n/10 0.3894 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 305--306
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 306--307
  [][][][]\OT1/cmr/m/n/10 1.649 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 317--317
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 318--318
  [][][][]\OT1/cmr/m/n/10 1.900 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 317--317
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 318--318
  [][][][]\OT1/cmr/m/n/10 1.476 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 329.
+               Default added (so using `tbp') on input line 330.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 351--352
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 352--353
  [][][][]\OT1/cmr/m/n/10 0.3872 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 363--363
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 364--364
  [][][][]\OT1/cmr/m/n/10 0.3521 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 363--363
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 364--364
  [][][][]\OT1/cmr/m/n/10 0.4164 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 374--375
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 375--376
  [][][][]\OT1/cmr/m/n/10 5.696 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 414--414
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 415--415
  [][][][]\OT1/cmr/m/n/10 1.064 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 414--414
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 415--415
  [][][][]\OT1/cmr/m/n/10 13.174 
  []
 
@@ -635,37 +639,40 @@ Overfull \hbox (7.77783pt too wide) in paragraph at lines 414--414
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 AED: lastpage setting LastPage
-[4] [5] (./FIN513_HW4.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[4] [5] [6] (./FIN513_HW4.aux) ) 
 Here is how much of TeX's memory you used:
- 13735 strings out of 492990
- 270774 string characters out of 6132637
- 418378 words of memory out of 5000000
- 17041 multiletter control sequences out of 15000+600000
+ 13882 strings out of 492990
+ 274482 string characters out of 6132637
+ 429440 words of memory out of 5000000
+ 17185 multiletter control sequences out of 15000+600000
  10813 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,63p,582b,1286s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on FIN513_HW4.pdf (5 pages, 144073 bytes).
+ 55i,17n,63p,582b,1286s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti10.pfb>
+Output written on FIN513_HW4.pdf (6 pages, 146279 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
