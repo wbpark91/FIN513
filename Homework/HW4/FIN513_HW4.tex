@@ -163,6 +163,43 @@
 %	PROBLEM 4
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
+	\begin{enumerate}[a.]
+	%% Sub-Problem a.
+	\item
+	Let $\bar{r}^d$ and $\bar{r}^f$ denote gross return of domestic riskless bond and foreign riskless bond, respectively. Then the risk-neutral probability $\bar{q}$ is calculated as $\bar{q} = \frac{\bar{r}^d / \bar{r}^f - d}{u - d}$.
+	\begin{enumerate}[i.]
+		\item
+		\textit{Assume $\bar{q} > 1$.} Since $u - d > 0$, $\bar{q} = \frac{\bar{r}^d / \bar{r}^f - d}{u - d} > 1$ is equivalent to $\frac{\bar{r}^d}{\bar{r}^f} - d > u - d \Rightarrow \frac{\bar{r}^d}{\bar{r}^f} > u > d$. Using this inequality, it is possible to make an arbitrage profit using the following strategies.
+		\begin{enumerate}[(1)]
+			\item Borrow an foreign currency and exchange to domestic currency.
+			\item Invest domestic currency from exchange of foreign currency to riskless bond.
+		\end{enumerate}
+		After one period, assume that the exchange rate becomes higher to $S_t \times u$. Then the investor have to pay $S_t u \bar{r}^f$ to the lender, and gets $S_t \bar{r}^d$ from the investment of domestic riskless bond. Therefore, the final payoff of the strategy is equal to $S_t \bar{r}^d - S_t u \bar{r}^f = S_t(\bar{r}^d / \bar{r}^f - u)$. Because we assumed that $\bar{r}^d / \bar{r}^f - u > 0$, and there is no initial cost to make the portfolio, the investor can make an arbitrage profit. Case in which exchange rate becomes $S_t \times d$ is analogous.
+		\item
+		\textit{Assume $\bar{q} < 0$.}
+		$\bar{q} = \frac{\bar{r}^d / \bar{r}^f - d}{u - d} < 0$ is equivalent to $\frac{\bar{r}^d}{\bar{r}^f} - d < 0 \Rightarrow \frac{\bar{r}^d}{\bar{r}^f}  < d < u$. In this case, it is also possible to make an arbitrage profit using the following strategies.
+		\begin{enumerate}[(1)]
+			\item Borrow $S_t$ amount of domestic currency and exchange into a foreign currency.
+			\item Invest a foreign currency to riskless bond.
+		\end{enumerate}
+		Then after one period, assuming the exchange rate becomes to $S_t \times d$, the investor will get $S_t d \bar{r}^f$ and have an obligation to pay $S_t \bar{r}^d$. Therefore, the final payoff the strategy is equal to $S_t d \bar{r}^f - S_t \bar{r}^d = S_t(d - \bar{r}^d / \bar{r}^f)$, which is positive. Therefore, the investor can make an arbitrage profit since there is no initial amount of investment. Case in which exchange rate becomes $S_t \times u$ is analogous.
+	\end{enumerate}
+	%% Sub-Problem b.	
+	\item
+	First, let us assume that exchange rate $y$ becomes $y \times u$ or $y \times d$ after one month. Assuming the expect return of investing in Afghani is zero, in order to match the expected return, the following equation should hold.
+	\begin{equation*}
+		y = 0.5 \times yu + 0.5 \times yd
+	\end{equation*}
+	Cancelling $y$ out on both sides and rearranging the terms, equation $d = 2 - u$ is obtained. Using the result, in order to match standard deviation, we can construct the following equation.
+	\begin{equation*}
+	\begin{aligned}
+		&0.5 \times u^2 + 0.5 \times d^2 = 0.5 \times u^2 + 0.5 \times (2 - u)^2 = \frac{0.1}{12} \approx 0.008	\\
+		&\Rightarrow u^2 - 2u + 2 - 0.008 = 0	\\
+		&\Rightarrow u = \frac{2 \pm \sqrt{4 - (1.992)^2}}{2} = 1.089~\text{or}~0.910
+	\end{aligned}
+	\end{equation*}
+	Since $u > d$, $u = 1.089$ and $d = 2 - u = 0.910$. By using the given interest rate to calculate risk-neutral probability $\bar{q}$, it is calculated as $\bar{q} = \frac{1.02 / 1.08 - 0.910}{1.089 - 0.910} = 0.1924$, which is between 0 and 1, satisfies the condition derived in (a). Therefore, if the value of $u$ and $d$ calculated above are used for constructing tree, it is possible to match the moments of exchange rate.
+	\end{enumerate}
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
