@@ -162,12 +162,154 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+	\item
+	By using the formula $u = e^{\sigma \sqrt{\Delta t}}$ and $d = 1/u$, the binomial tree is constructed and by using backward induction, price of call option was calculated as 0.0561506, price of put option was calculated as 0.0659037. Since a straddle is a portfolio of a call and put for long position both, price of straddle is calculated as 0.0561506 + 0.0659037 = 0.122054.
+	\item	
+	Using the same tree constructed in (a), straddle price is calculated by same method with each maturity, and plotted as Figure \ref{fig:prob1 - straddle price}. It seems that $\frac{\partial \Pi}{\partial t}$ has negative value since price of straddle is decreasing.
+	%% Straddle price plot
+	\begin{figure}[h]
+	\centering
+		\includegraphics[scale = 0.6]{straddle_price.png}
+		\caption{Straddle price}
+	\label{fig:prob1 - straddle price}
+	\end{figure}
+	%%
+	\item
+	Even though the price of straddle is decreasing on the plot, it does not mean buying a straddle has a negative expected return. It is because the values of straddle corresponding maturity were calculated assuming \underline{others are equal}. Since straddle has positive payoff unless underlying price at maturity is exactly same as price at initial date, it is likely to make a profit if variation of stock price is high enough. However, since Figure \ref{fig:prob1 - straddle price} ignores variation of underlying prices, it seems that holding a straddle makes negative return even if it is not true.
+	\end{enumerate}
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
+Since the payoff at one year depends on payoff at 6 months, in order to value this contract, it is necessary to separate cases with respect to payoff at 6 months. Considering the currency option example used in the lecture notes, the possible profits at 6 months are \{20, 10, -2.62\}.
+\begin{enumerate}[i.]
+	%% Rate = 112.75, C = 20
+	\item \textit{$C = 20$ at 6 month:} This case corresponds to exchange rate which becomes 112.75 at $t = 0.5$. Given this, the possible variation of exchange rate at $t = 1$ has just three states. Figure \ref{tree:prob2 - exchange rate tree: 112.75} represents the possible states of exchange rate given the rate is 112.75 at 6 months.
+%----------------------------------------------------------------------------------------
+	%% EXCHANGE RATE TREE - 112.75
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[>=stealth,sloped]
+		\matrix (tree) [%
+		matrix of nodes,
+		minimum size=1cm,
+		column sep=2.5cm,
+		row sep=0.2cm,
+    	]
+    	{
+        				  &   & 127.12 \\
+	       	  	 & 119.72 &   \\
+	      112.75 & 	 	 & 112.75 \\
+        		 	 & 106.16 &   \\
+		       		   &   & 100.00 \\
+    };
+    \draw[->] (tree-3-1) -- (tree-2-2) node [midway,above] {};
+    \draw[->] (tree-3-1) -- (tree-4-2) node [midway,below] {};
+    \draw[->] (tree-2-2) -- (tree-1-3) node [midway,above] {};
+    \draw[->] (tree-2-2) -- (tree-3-3) node [midway,below] {};
+    \draw[->] (tree-4-2) -- (tree-3-3) node [midway,above] {};
+    \draw[->] (tree-4-2) -- (tree-5-3) node [midway,below] {};
+  	\end{tikzpicture}
+  	\caption{Exchange rate tree given rate 112.75 at $t = 0.5$}
+	\label{tree:prob2 - exchange rate tree: 112.75}
+  	\end{figure}
+	In this case, since $C$ is already 20, and the possible state is always greater than reference level, payoff at $t = 1$ will be zero. Therefore the value of contract at $t = 0.5$ will be automatically 20 given the exchange rate is 112.75.
+	%% Rate = 100, C = 10
+	\item \textit{$C = 10$ at 6 month:} This case corresponds to exchange rate which becomes 100 at $t = 0.5$. Using the same procedure, it is possible to calculate final payoff, and calculate the value of contract given the rate is 100 at $t = 0.5$. As shown in Figure \ref{tree:prob2 - contract value tree rate: 100}, it was calculated as 15.16.
+%----------------------------------------------------------------------------------------
+	%% EXCHANGE RATE TREE - 100, CONTRACT VALUE
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[>=stealth,sloped]
+		\matrix (tree) [%
+		matrix of nodes,
+		minimum size=1cm,
+		column sep=2.5cm,
+		row sep=0.2cm,
+    	]
+    	{
+        				  &   & 10.00 \\
+	       	  	 & 9.98 &   \\
+	      10 + 5.16 & 	 	 & 10.00 \\
+        		 	 & 2.20 &   \\
+		       		   &   & -2.62 \\
+    };
+    \draw[->] (tree-3-1) -- (tree-2-2) node [midway,above] {};
+    \draw[->] (tree-3-1) -- (tree-4-2) node [midway,below] {};
+    \draw[->] (tree-2-2) -- (tree-1-3) node [midway,above] {};
+    \draw[->] (tree-2-2) -- (tree-3-3) node [midway,below] {};
+    \draw[->] (tree-4-2) -- (tree-3-3) node [midway,above] {};
+    \draw[->] (tree-4-2) -- (tree-5-3) node [midway,below] {};
+  	\end{tikzpicture}
+  	\caption{Contract value calculation using tree: given rate is 100 at $t = 0.5$}
+	\label{tree:prob2 - contract value tree rate: 100}
+  	\end{figure}
+%----------------------------------------------------------------------------------------
+	\item \textit{$C = -2.62$ at 6 month:} This corresponds to exchange rate which becomes 88.69 at $t = 0.5$. Using the same procedure, contract value can be calculated as Figure \ref{tree:prob2 - contract value tree rate: 88.69}.
+%----------------------------------------------------------------------------------------
+	%% EXCHANGE RATE TREE - 88.69, CONTRACT VALUE
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[>=stealth,sloped]
+		\matrix (tree) [%
+		matrix of nodes,
+		minimum size=1cm,
+		column sep=2.5cm,
+		row sep=0.2cm,
+    	]
+    	{
+        				  &   & 10.00 \\
+	       	  	 & 2.20 &   \\
+	      -2.62 - 8.38 & 	 	 & -2.62 \\
+        		 	 & -14.97 &   \\
+		       		   &   & -22.67 \\
+    };
+    \draw[->] (tree-3-1) -- (tree-2-2) node [midway,above] {};
+    \draw[->] (tree-3-1) -- (tree-4-2) node [midway,below] {};
+    \draw[->] (tree-2-2) -- (tree-1-3) node [midway,above] {};
+    \draw[->] (tree-2-2) -- (tree-3-3) node [midway,below] {};
+    \draw[->] (tree-4-2) -- (tree-3-3) node [midway,above] {};
+    \draw[->] (tree-4-2) -- (tree-5-3) node [midway,below] {};
+  	\end{tikzpicture}
+  	\caption{Contract value calculation using tree: given rate is 100 at $t = 0.5$}
+	\label{tree:prob2 - contract value tree rate: 88.69}
+  	\end{figure}
+%----------------------------------------------------------------------------------------
+\end{enumerate}
+Combining results above, the value of contract at $t = 0.5$ for all states can be known. Therefore, by constructing another binomial tree, the value of contract at initial date can be calculated by backward induction. Figure \ref{tree:prob2 - contract value tree: FINAL} shows binomial tree used for calculating value of the contract. The value was calculated as 5.86.
+%----------------------------------------------------------------------------------------
+	%% CONTRACT VALUE TREE - FINAL
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[>=stealth,sloped]
+		\matrix (tree) [%
+		matrix of nodes,
+		minimum size=1cm,
+		column sep=2.5cm,
+		row sep=0.2cm,
+    	]
+    	{
+        				  &   & 20 \\
+	       	  	 & 16.97 &   \\
+	      5.86 & 	 	 & 15.16 \\
+        		 	 & -0.99 &   \\
+		       		   &   & -10.99 \\
+    };
+    \draw[->] (tree-3-1) -- (tree-2-2) node [midway,above] {};
+    \draw[->] (tree-3-1) -- (tree-4-2) node [midway,below] {};
+    \draw[->] (tree-2-2) -- (tree-1-3) node [midway,above] {};
+    \draw[->] (tree-2-2) -- (tree-3-3) node [midway,below] {};
+    \draw[->] (tree-4-2) -- (tree-3-3) node [midway,above] {};
+    \draw[->] (tree-4-2) -- (tree-5-3) node [midway,below] {};
+  	\end{tikzpicture}
+  	\caption{Contract value tree}
+	\label{tree:prob2 - contract value tree: FINAL}
+  	\end{figure}
+%----------------------------------------------------------------------------------------
+
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -426,8 +568,8 @@
 		\matrix (tree) [%
 		matrix of nodes,
 		minimum size=1cm,
-		column sep=3.5cm,
-		row sep=1cm,
+		column sep=2.5cm,
+		row sep=0.2cm,
     	]
     	{
         				  &   & 59.45 \\
@@ -455,8 +597,8 @@
 		\matrix (tree) [%
 		matrix of nodes,
 		minimum size=1cm,
-		column sep=3.5cm,
-		row sep=1cm,
+		column sep=2.5cm,
+		row sep=0.2cm,
     	]
     	{
         				  &   & 39.45 \\
