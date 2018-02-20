@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  17 FEB 2018 20:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  19 FEB 2018 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -562,79 +562,90 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 276--276
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<straddle_price.png, id=12, 455.7025pt x 408.52625pt>
+File: straddle_price.png Graphic file (type png)
+<use straddle_price.png>
+Package pdftex.def Info: straddle_price.png  used on input line 173. on input l
+ine 173.
+Package pdftex.def Info: Requested size: 273.4236pt x 245.11765pt on input line
+ 173.
+ [2 <./straddle_price.png>] [3]
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 292--292
  [][][][]\OT1/cmr/m/n/10 12.13 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 276--276
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 292--292
  [][][][]\OT1/cmr/m/n/10 32.97 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 299--299
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 315--315
  [][][][]\OT1/cmr/m/n/10 0.6420 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 299--299
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 315--315
  [][][][]\OT1/cmr/m/n/10 0.3894 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 306--307
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 322--323
  [][][][]\OT1/cmr/m/n/10 1.649 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 318--318
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 334--334
  [][][][]\OT1/cmr/m/n/10 1.900 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 318--318
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 334--334
  [][][][]\OT1/cmr/m/n/10 1.476 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 330.
+               Default added (so using `tbp') on input line 346.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 352--353
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 368--369
  [][][][]\OT1/cmr/m/n/10 0.3872 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 364--364
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 380--380
  [][][][]\OT1/cmr/m/n/10 0.3521 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 364--364
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 380--380
  [][][][]\OT1/cmr/m/n/10 0.4164 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 375--376
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 391--392
  [][][][]\OT1/cmr/m/n/10 5.696 
  []
 
 
-Overfull \hbox (2.77782pt too wide) in paragraph at lines 415--415
+Overfull \hbox (2.77782pt too wide) in paragraph at lines 431--431
  [][][][]\OT1/cmr/m/n/10 1.064 
  []
 
 
-Overfull \hbox (7.77783pt too wide) in paragraph at lines 415--415
+Overfull \hbox (7.77783pt too wide) in paragraph at lines 431--431
  [][][][]\OT1/cmr/m/n/10 13.174 
  []
 
-[3]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -646,33 +657,36 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 AED: lastpage setting LastPage
-[4] [5] [6] (./FIN513_HW4.aux) ) 
+[5] [6] [7] (./FIN513_HW4.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 13882 strings out of 492990
- 274482 string characters out of 6132637
- 429440 words of memory out of 5000000
- 17185 multiletter control sequences out of 15000+600000
+ 13889 strings out of 492990
+ 274623 string characters out of 6132637
+ 428419 words of memory out of 5000000
+ 17190 multiletter control sequences out of 15000+600000
  10813 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,17n,63p,582b,1286s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti10.pfb>
-Output written on FIN513_HW4.pdf (6 pages, 146279 bytes).
+ 55i,17n,63p,650b,1286s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on FIN513_HW4.pdf (7 pages, 161896 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

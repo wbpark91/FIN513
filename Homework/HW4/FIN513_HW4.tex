@@ -162,6 +162,22 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+	\item
+	By using the formula $u = e^{\sigma \sqrt{\Delta t}}$ and $d = 1/u$, the binomial tree is constructed and by using backward induction, price of call option was calculated as 0.0561506, price of put option was calculated as 0.0659037. Since a straddle is a portfolio of a call and put for long position both, price of straddle is calculated as 0.0561506 + 0.0659037 = 0.122054.
+	\item	
+	Using the same tree constructed in (a), straddle price is calculated by same method with each maturity, and plotted as Figure \ref{fig:prob1 - straddle price}. It seems that $\frac{\partial \Pi}{\partial t}$ has negative value since price of straddle is decreasing.
+	%% Straddle price plot
+	\begin{figure}[h]
+	\centering
+		\includegraphics[scale = 0.6]{straddle_price.png}
+		\caption{Straddle price}
+	\label{fig:prob1 - straddle price}
+	\end{figure}
+	%%
+	\item
+	Even though the price of straddle is decreasing on the plot, it does not mean buying a straddle has a negative expected return. It is because the values of straddle corresponding maturity were calculated assuming \underline{others are equal}. Since straddle has positive payoff unless underlying price at maturity is exactly same as price at initial date, it is likely to make a profit if variation of stock price is high enough. However, since Figure \ref{fig:prob1 - straddle price} ignores variation of underlying prices, it seems that holding a straddle makes negative return even if it is not true.
+	\end{enumerate}
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
