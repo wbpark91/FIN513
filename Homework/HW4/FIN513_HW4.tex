@@ -353,12 +353,12 @@ Combining results above, the value of contract at $t = 0.5$ for all states can b
 	Cancelling $y$ out on both sides and rearranging the terms, equation $d = 2 - u$ is obtained. Using the result, in order to match standard deviation, we can construct the following equation.
 	\begin{equation*}
 	\begin{aligned}
-		&0.5 \times u^2 + 0.5 \times d^2 = 0.5 \times u^2 + 0.5 \times (2 - u)^2 = \frac{0.1}{12} \approx 0.008	\\
-		&\Rightarrow u^2 - 2u + 2 - 0.008 = 0	\\
-		&\Rightarrow u = \frac{2 \pm \sqrt{4 - (1.992)^2}}{2} = 1.089~\text{or}~0.910
+		&0.5 \times (u - 1)^2 + 0.5 \times (d - 1)^2 = 0.5 \times (u - 1)^2 + 0.5 \times (1 - u)^2 = (\frac{0.1}{12})^2	\\
+		&\Rightarrow (u - 1)^2 = (\frac{1}{120})^2	\\
+		&\Rightarrow u = 1 \pm \frac{1}{120}
 	\end{aligned}
 	\end{equation*}
-	Since $u > d$, $u = 1.089$ and $d = 2 - u = 0.910$. By using the given interest rate to calculate risk-neutral probability $\bar{q}$, it is calculated as $\bar{q} = \frac{1.02 / 1.08 - 0.910}{1.089 - 0.910} = 0.1924$, which is between 0 and 1, satisfies the condition derived in (a). Therefore, if the value of $u$ and $d$ calculated above are used for constructing tree, it is possible to match the moments of exchange rate.
+	Since $u > d$, $u = 1 + \frac{1}{120} = 1.0083$ and $d = 2 - u = 0.9917$. By using the given interest rate to calculate risk-neutral probability $\bar{q}$, it is calculated as $\bar{q} = \frac{1.02 / 1.08 - 0.9917}{1.0083 - 0.9917} = -2.8467$, which is not between 0 and 1, does not satisfy the condition derived in (a). Therefore, if the value of $u$ and $d$ calculated above are used for constructing tree, arbitrage occurs.
 	\end{enumerate}
 \end{homeworkProblem}
 
@@ -466,7 +466,7 @@ Combining results above, the value of contract at $t = 0.5$ for all states can b
 	\label{tree:prob5-vol and u}
 	\end{figure}
 %----------------------------------------------------------------------------------------
-	Since there are 4 states at period 2, there are four possible returns and corresponding probabilities. Tables \ref{tab:returns and probs} represents returns and probabilities at each states.
+	Since there are 4 states at period 2, there are four possible returns and corresponding probabilities. Table \ref{tab:returns and probs} represents returns and probabilities at each states.
 %----------------------------------------------------------------------------------------
 	%% RETURNS AND PROBS
 	\begin{table}[]
@@ -475,15 +475,15 @@ Combining results above, the value of contract at $t = 0.5$ for all states can b
 	\begin{tabular}{@{}ccc@{}}
 	\toprule
 	\textit{Stock Price} & \textit{Return($r$)} & \textit{Probability($p$)} \\ \midrule
-	48.67                & 1.434           & 0.3025               \\
-	22.34                & 0.117           & 0.2475               \\
-	23.05                & 0.153           & 0.2475               \\
-	6.38                 & -0.681          & 0.2025               \\ \bottomrule
+	48.67                & 0.889           & 0.3025               \\
+	22.34                & 0.111           & 0.2475               \\
+	23.05                & 0.142           & 0.2475               \\
+	6.38                 & -1.142          & 0.2025               \\ \bottomrule
 	\end{tabular}
 	\caption{Returns and probabilities at each state}
 	\label{tab:returns and probs}
 	\end{table}
-	From the table, since returns and probabilities at each state are given, it is possible to calculate expected return and variance. Expected return is calculated as $\mathrm{E}(r) = \sum_{i = 1}^4 r_i p_i = 1.434 \times 0.3025 + 0.117 \times 0.2475 + 0.153 \times 0.2475 -0.681 \times 0.2025 = 36.25\%$, Variance is calculated as $\mathrm{Var}(r) = \sum_{i = 1}^4 (r_i - \mathrm{E}(r))^2 = 59.33\%$. Therefore, standard deviation is equal to $\sqrt{59.33}\% = 77.03\%$, and annualized variance and volatility is equal to $29.67\%$ and $54.47\%$, respectively.
+	From the table, since returns and probabilities at each state are given, it is possible to calculate expected return and variance. Expected return is calculated as $\mathrm{E}(r) = \sum_{i = 1}^4 r_i p_i = 0.889 \times 0.3025 + 0.111 \times 0.2475 + 0.142 \times 0.2475 -1.142 \times 0.2025 = 10.03\%$, Variance is calculated as $\mathrm{Var}(r) = \sum_{i = 1}^4 (r_i - \mathrm{E}(r))^2 = 50.13\%$. Therefore, standard deviation is equal to $\sqrt{50.13}\% = 70.81\%$, and annualized variance and volatility is equal to $25.07\%$ and $50.07\%$, respectively.
 	%%
 	\item
 	Since the volatility changes at each node, risk neutral probability $q$ would change at each nodes, and it affects value of the option. Figure \ref{tree:prob5-risk-neutral probs} represents risk-neutral probabilities at each node.
@@ -572,11 +572,11 @@ Combining results above, the value of contract at $t = 0.5$ for all states can b
 		row sep=0.2cm,
     	]
     	{
-        				  &   & 59.45 \\
-	       	  	 & 34.48 &   \\
+        				  &   & 54.44 \\
+	       	  	 & 33.00 &   \\
 	      \$20.00 & 	 	 & 20.00 \\
-        		 	 & 11.60 &   \\
-		       		   &   & 6.73 \\
+        		 	 & 12.12 &   \\
+		       		   &   & 7.35 \\
     };
     \draw[->] (tree-3-1) -- (tree-2-2) node [midway,above] {};
     \draw[->] (tree-3-1) -- (tree-4-2) node [midway,below] {};
@@ -588,7 +588,7 @@ Combining results above, the value of contract at $t = 0.5$ for all states can b
   	\caption{Stock price tree: constant volatility}
 	\label{tree:prob5-stock price tree: const volatility}
   	\end{figure}
-	Using the same backward induction method, option price was calculated as in Figure \ref{tree:prob5-option price tree: const volatility}. The value calculated is 5.463, which is smaller than option price using non-constant volatility.
+	Using the same backward induction method, option price was calculated as in Figure \ref{tree:prob5-option price tree: const volatility}. The value calculated is 5.055, which is smaller than option price using non-constant volatility.
 %----------------------------------------------------------------------------------------
 	%% OPTION PRICE TREE: CONST VOL
 	\begin{figure}[h]
@@ -601,9 +601,9 @@ Combining results above, the value of contract at $t = 0.5$ for all states can b
 		row sep=0.2cm,
     	]
     	{
-        				  &   & 39.45 \\
-	       	  	 & 14.680 &   \\
-	      5.463 & 	 	 & 0 \\
+        				  &   & 34.439 \\
+	       	  	 & 13.195 &   \\
+	      5.055 & 	 	 & 0 \\
         		 	 & 0 &   \\
 		       		   &   & 0 \\
     };
