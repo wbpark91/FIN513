@@ -111,11 +111,19 @@
 \newcommand{\hmwkAuthorName}{Wanbae Park} % Your name
 
 %----------------------------------------------------------------------------------------
-%	MATH
+%	PARTIAL DERIVATIVES
 %----------------------------------------------------------------------------------------
 \newcommand{\pdv}[3][]{
 	\frac{\partial^{#1}{#2}}{\partial{{#3}^{#1}}}
 }
+
+%----------------------------------------------------------------------------------------
+%	EXPECTATION AND VARIANCE OPERATOR
+%----------------------------------------------------------------------------------------
+ \newcommand{\E}{\mathrm{E}} 
+ \newcommand{\Var}{\mathrm{Var}}
+ \newcommand{\Cov}{\mathrm{Cov}}
+ \newcommand{\Corr}{\mathrm{Corr}}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -186,6 +194,46 @@
 %	PROBLEM 2
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
-
+	Since it is assumed that Black-Scholes assumptions hold, put option price is calculated as follows.
+	\begin{equation*}
+	\begin{aligned}
+		&p = B_{t, T}(KN(-d_2) - FN(-d_1))	\\
+		&d_1 = \frac{\log({F / K}) + \frac{1}{2} \sigma^2 (T - t)}{\sigma \sqrt{T - t}}	\\
+		&d_2 = d_1 - \sqrt{T - t}
+		\end{aligned}
+	\end{equation*}
+	Let $p_1, p_2, p_3, p_4$ denote price of put options with time to maturity from 2 months to 5 months, respectively. Since all parameters need for valuing option are given except volatility, and it is assumed that all of options have same implied volatility, it is possible to calculate volatility by using the formula inversely. In other words, we can obtain implied volatility by searching $\sigma$ which equates sum of option prices to 2 millions. (find $\sigma$ such that $\sum_{i = 1}^4 p_i = 2,000,000$) By taking some numerical procedures, the implied volatility is calculated as about 9.63\%.
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+\begin{enumerate}[(a)]
+	\item		%% problem (a)
+	Under Black-Scholes economy, call option price is calculated as $c = e^{-r(T - t)}\E_t^Q[\max(S_T - K, 0)]$, where $\E_t^Q$ is an expectation operator under risk neutral measure conditioning at time $t$. Since we already know that $c = SN(d_1) - Ke^{-r(T - t)}N(d_2)$ and $p = Ke^{-r(T - t)}N(-d_2) - SN(-d_1)$, where $d_1 = \frac{\log(S / Ke^{-r(T - t)}) + \frac{1}{2} \sigma^2 (T - t)}{\sigma \sqrt{T - t}}$, $d_2 = d_1 - \sigma \sqrt{T - t}$, expected payoff under risk neutral measure can be derived as follows.
+%----------------------------------------------------------------------------------------
+	%% EXPECTED PAYOFF UNDER RISK NEUTRAL MEASURE
+	\begin{equation*}
+	\begin{aligned}
+		\E_t^Q[\max(S_T - K, 0)] = Se^{r(T - t)}N(d_1) - KN(d_2)	\\
+		\E_t^Q[\max(K - S_T, 0)] = KN(-d_2) - Se^{r(T - t)}N(-d_1)
+	\end{aligned}
+	\end{equation*}	
+%----------------------------------------------------------------------------------------	
+	Under risk neutral measure, expected return of physical measure $\mu$ is converted into risk free rate, $r$. Therefore, by converting all $r$ into $\mu$, we can obtain true expected payoff. Therefore, true expected payoff of options are derived as follows.
+%----------------------------------------------------------------------------------------	
+	%% TRUE EXPECTED PAYOFF
+	\begin{equation*}
+	\begin{aligned}
+		&\E_t[\max(S_T - K, 0)] = Se^{\mu(T - t)}N(d_1) - KN(d_2)	\\
+		&\E_t[\max(K - S_T, 0)] = KN(-d_2) - Se^{\mu(T - t)}N(-d_1)	\\
+		&d_1 = \frac{\log(S / Ke^{-\mu(T - t)}) + \frac{1}{2} \sigma^2 (T - t)}{\sigma \sqrt{T - t}}	\\
+		&d_2 = d_1 - \sqrt{T - t}
+	\end{aligned}
+	\end{equation*}
+%----------------------------------------------------------------------------------------	
+	\item		%% problem (b)
+	\item		%% problem (c)
+\end{enumerate}
 \end{homeworkProblem}
 \end{document}
