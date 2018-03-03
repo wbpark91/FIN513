@@ -32,6 +32,10 @@
 \usepackage{subcaption}
 \usepackage{tikz}
 \usetikzlibrary{matrix}
+\usepackage{algorithm2e}
+
+\RestyleAlgo{boxruled}
+\LinesNumbered
 
 % Margins
 \topmargin=-0.45in
@@ -143,6 +147,7 @@
 
 \begin{document}
 
+
 \maketitle
 
 %----------------------------------------------------------------------------------------
@@ -233,6 +238,35 @@
 	\end{equation*}
 %----------------------------------------------------------------------------------------	
 	\item		%% problem (b)
+	By using the following algorithm, it is possible to implement dynamic replication strategy.
+	\begin{algorithm}[ht]
+	\caption{Monte-Carlo Simulation for Dynamic Replication\label{alg}} 
+		\KwIn{$S_0$, $K$, $\mu$, $r$, $d$, $\sigma$, $T$, $N$, $M$} \tcp{$N$ and $M$ denote number of time steps and number of paths, respectively.}
+		\KwOut{Average of payoff, Standard Deviation}
+		Set P as an array	\tcp{P: array of portfolio value at maturity for each sample path}
+		Set $\Delta t = T / N$	\\
+		\For{$i \gets 1$ \textbf{to} M} {
+			Initialize S, D, C as an array \tcp{S: stock price path, D: delta path, C: cash path}
+			Set $S_1 = S_0$, $D_1 = N(d_1; S_1) - N(-d_1; S_1)$, $C_1 = -D_1S_1$.	\\
+			\For{$j \gets 1$ \textbf{to} $N$} {
+				Generate random number $Z$ which follows $N(0, 1)$.	\\
+				Calculate $S_{j+1} = S_{j}e^{(\mu - d - \frac{1}{2}\sigma^2) \Delta t + \sigma \sqrt{\Delta t} Z}$	\\
+				\If{$j \neq N$} {
+					\tcp{Delta of straddle is equal to sum of deltas of call and put.}
+					Calculate $D_{j+1} = N(d_1;S_{j+1}) - N(-d_1;S_{j+1})$ \\	
+					\tcp{The rest of cash after rebalancing}
+					Calculate $C_{j+1} = C_{j}e^{r \Delta t} - (D_{j+1} - D_{j})S_{j+1}$.
+				}
+				\Else{
+					\tcp{$j = N$ case}
+					Calculate $P_i = D_{N} S_{N+1} + C_{N}e^{r \Delta t}$.	\tcp{Value at maturity at $i^{th}$ path}
+				}
+			}
+		}
+		\Return{$\bar{P}$, $\sigma_P / \sqrt{M}$}	\tcp{$\bar{P}$: average of $P$, $\sigma_P$: standard deviation of $P$.}
+		
+	\end{algorithm}
+	
 	\item		%% problem (c)
 \end{enumerate}
 \end{homeworkProblem}
