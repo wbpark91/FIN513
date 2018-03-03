@@ -237,10 +237,45 @@
 	\end{aligned}
 	\end{equation*}
 %----------------------------------------------------------------------------------------	
+	By using the formula above, expected payoff of straddle is calculated as follows.
+%----------------------------------------------------------------------------------------	
+	%% EXPECTED PAYOFF TABLE
+	\begin{table}[ht]
+	\centering
+	\label{my-label}
+	\begin{tabular}{@{}cc@{}}
+	\toprule
+	~Volatility~                     & ~Expected Payoff~   \\ \midrule
+	0.2 & 17.506	\\
+	0.3 & 25.376	\\
+	0.4 & 33.348	\\
+	0.5 & 41.306	\\	\bottomrule
+	\end{tabular}
+	\caption{Expected payoff under physical measure}	\label{tab:prob3-(a): Expected payoff}
+	\end{table}
+%----------------------------------------------------------------------------------------	
+	It is well-known that a straddle is more worth when volatility is larger. From the result, we can find expected payoff of straddle increases as volatility increases, so the result is consistent with that fact.
+%----------------------------------------------------------------------------------------		
 	\item		%% problem (b)
-	By using the following algorithm, it is possible to implement dynamic replication strategy.
+	By using the Algorithm \ref{alg: monte-carlo} mentioned below, it is possible to implement dynamic replication strategy. Table \ref{tab:prob3-(b): Simulation Result} shows the result from simulation.
+%----------------------------------------------------------------------------------------	
+	%% RESULT TABLE	
+	\begin{table}[ht]
+	\centering
+	\label{my-label}
+	\begin{tabular}{@{}ccccc@{}}
+	\toprule
+	Volatility                       & 0.2    & 0.3    & 0.4    & 0.5    \\ \midrule
+	Payoff from analytic solution    & 17.506 & 25.376 & 33.348 & 41.306 \\
+	Payoff from dynamic replication  & 1.457  & 1.242  & 1.691  & 1.860  \\
+	Standard deviation of simulation & 0.146  & 0.226  & 0.306  & 0.407  \\ \bottomrule
+	\end{tabular}
+	\caption{Simulation result}	\label{tab:prob3-(b): Simulation Result}
+	\end{table}
+%----------------------------------------------------------------------------------------	
+	%% ALGORITHM FOR HEDGE SIMULATION
 	\begin{algorithm}[ht]
-	\caption{Monte-Carlo Simulation for Dynamic Replication\label{alg}} 
+	\caption{Monte-Carlo Simulation for Dynamic Replication\label{alg: monte-carlo}} 
 		\KwIn{$S_0$, $K$, $\mu$, $r$, $d$, $\sigma$, $T$, $N$, $M$} \tcp{$N$ and $M$ denote number of time steps and number of paths, respectively.}
 		\KwOut{Average of payoff, Standard Deviation}
 		Set P as an array	\tcp{P: array of portfolio value at maturity for each sample path}
@@ -264,10 +299,10 @@
 			}
 		}
 		\Return{$\bar{P}$, $\sigma_P / \sqrt{M}$}	\tcp{$\bar{P}$: average of $P$, $\sigma_P$: standard deviation of $P$.}
-		
 	\end{algorithm}
-	
+%----------------------------------------------------------------------------------------	
 	\item		%% problem (c)
+	As shown in Table \ref{tab:prob3-(b): Simulation Result}, there is a large difference between analytic payoff and value of replication strategy.
 \end{enumerate}
 \end{homeworkProblem}
 \end{document}
