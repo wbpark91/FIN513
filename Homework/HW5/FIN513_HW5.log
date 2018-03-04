@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  3 MAR 2018 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.4)  3 MAR 2018 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -622,21 +622,22 @@ Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- 
+ [4] [5] [6]
+
 AED: lastpage setting LastPage
-[4] [5] (./FIN513_HW5.aux)
+[7] (./FIN513_HW5.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14552 strings out of 492990
- 283183 string characters out of 6132637
- 440640 words of memory out of 5000000
- 17838 multiletter control sequences out of 15000+600000
+ 14555 strings out of 492990
+ 283312 string characters out of 6132637
+ 435664 words of memory out of 5000000
+ 17841 multiletter control sequences out of 15000+600000
  10812 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,19n,54p,1924b,659s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,54p,1924b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
@@ -654,10 +655,10 @@ e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 7/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on FIN513_HW5.pdf (5 pages, 188853 bytes).
+Output written on FIN513_HW5.pdf (7 pages, 191940 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

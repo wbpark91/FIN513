@@ -257,7 +257,7 @@
 	It is well-known that a straddle is more worth when volatility is larger. From the result, we can find expected payoff of straddle increases as volatility increases, so the result is consistent with that fact.
 %----------------------------------------------------------------------------------------		
 	\item		%% problem (b)
-	By using the Algorithm \ref{alg: monte-carlo} mentioned below, it is possible to implement dynamic replication strategy. Table \ref{tab:prob3-(b): Simulation Result} shows the result from simulation. Simulation was performed with 10,000 sample paths and 500 time steps.
+	By using the Algorithm \ref{alg: monte-carlo} mentioned below(See the last page), it is possible to implement dynamic replication strategy. Table \ref{tab:prob3-(b): Simulation Result} shows the result from simulation. Simulation was performed with 10,000 sample paths and 500 time steps.
 %----------------------------------------------------------------------------------------	
 	%% RESULT TABLE	
 	\begin{table}[ht]
@@ -273,6 +273,82 @@
 	\caption{Simulation result}	\label{tab:prob3-(b): Simulation Result}
 	\end{table}
 %----------------------------------------------------------------------------------------	
+	\item		%% problem (c)
+	As shown in Table \ref{tab:prob3-(b): Simulation Result}, there is a large difference between analytic payoff and value of replication strategy. It is because the replication strategy cannot reflect curvature of the straddle with respect to spot price. It just replicated straddle price with respect to ``direction'' of spot price: going up or down of price. However, value of straddle is actually independent to direction of spot price. What actually matters is the amount of change in price. Payoff of straddle gets larger when spot price at maturity is far from the strike price, so volatility is the key feature. Since delta of a straddle increases as spot price increases, the position requires more underlyings if spot price gets higher and vice versa. It means the position has ``buy-high, sell-low'' strategy. The loss from ``buy-high, sell-low'' is compensated through treating curvature of straddle such as including options in replicating portfolio. However, in this portfolio, there is no such securities, therefore it cannot replicate payoff of straddle. Of course, it is possible to think that this delta-hedged portfolio should have zero value at maturity. However, it is not because the expected return of spot price is not zero. Since delta-hedging portfolio is a portfolio replicating payoff of derivatives from ``directional'' changes of underlying asset price, the portfolio has positive value because a straddle has positive value if underlying asset price goes up. If expected return of spot price is zero, expected payoff of replicating portfolio would be zero. Table \ref{tab:prob3-(c) expected payoff with zero mu} shows expected payoff of replicating portfolio when $\mu = 0$. Simulation was performed with 10,000 sample paths and 500 time steps.%----------------------------------------------------------------------------------------	
+	%% EXPECTED PAYOFF(ZERO MU)		
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{@{}ccc@{}}
+	\toprule
+	Volatility & Expected Payoff & Standard Deviation \\ \midrule
+	0.2        & -0.011          & 0.124              \\
+	0.3        & 0.116           & 0.193              \\
+	0.4        & -0.002          & 0.273              \\
+	0.5        & 0.007           & 0.359              \\ \bottomrule
+	\end{tabular}
+	\caption{Expected payoff($\mu = 0$)} 	\label{tab:prob3-(c) expected payoff with zero mu}
+	\end{table}
+%----------------------------------------------------------------------------------------	
+	Unlike results in Table \ref{tab:prob3-(b): Simulation Result}, expected payoffs are closed to zero, and all expected payoffs are within $0 \pm \sigma$ where $\sigma$ is standard deviation of simulation. It means that we cannot say expected payoffs are different to zero, statistically. Therefore, we can conclude that the replicating portfolio should not be zero unless expected return of spot price is not zero.
+	\end{enumerate}
+\end{homeworkProblem}
+\begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+	\item		%% problem (a)
+	By using similar procedure with Algorithm \ref{alg: monte-carlo}, only changing $D_{j+1}$ as $b(S_{j+1} - S_0)$, the expected cash-flow and standard deviation can be obtained. Table \ref{tab:prob4-(a) expected cash flow} shows expected cash flow and standard deviation with respect to volatilities. Simulation was performed with 50,000 sample paths and 500 time steps.
+%----------------------------------------------------------------------------------------	
+	%% EXPECTED CASH FLOW
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{@{}ccc@{}}
+	\toprule
+	Volatility & Expected Cash Flow & Standard Deviation \\ \midrule
+	0.2        & 4.23               & 0.19               \\
+	0.3        & 6.08               & 0.47               \\
+	0.4        & 8.31               & 0.92               \\
+	0.5        & 13.51              & 1.85               \\ \bottomrule
+	\end{tabular}
+	\caption{Expected cash flow of the strategy}	\label{tab:prob4-(a) expected cash flow}
+	\end{table}
+%----------------------------------------------------------------------------------------	
+	From the table, the expected cash flow increases as volatility increases. However, we cannot say ``long volatility'' strategy because the positive return is caused by positive expected return, not volatility. Table \ref{tab:prob4-(a) expected cash flow with zero mu} shows the expected cash flow where expected return of spot price is zero.
+%----------------------------------------------------------------------------------------	
+	%% EXPECTED CASH FLOW ZERO MU
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{@{}ccc@{}}
+	\toprule
+	Volatility & Expected Cash Flow & Standard Deviation \\ \midrule
+	0.2        & 0.13               & 0.14               \\
+	0.3        & -0.49               & 0.36               \\
+	0.4        & 0.60               & 0.82               \\
+	0.5        & 0.87              & 1.49               \\ \bottomrule
+	\end{tabular}
+	\caption{Expected cash flow of the strategy($\mu = 0$)}	\label{tab:prob4-(a) expected cash flow with zero mu}
+	\end{table}
+%----------------------------------------------------------------------------------------	
+	From the table, although volatility is same as Table \ref{tab:prob4-(a) expected cash flow}, we can find that expected cash flow is quite low. There is even a negative expected cash flow. Almost all cash flows are statistically indifferent to zero. Therefore, we cannot conclude that the strategy is ``long volatility'' strategy. Instead, the strategy invests in positive expected return of spot price.
+	\item		%% problem (b)
+	By using similar simulation procedure, expected return and Sharpe ratio was calculated as Table \ref{tab:prob4-b - expected return and sharpe ratio}. Sharpe ratio was calculated as (Expected return / Standard deviation) since we assumed that risk free rate is equal to zero.
+%----------------------------------------------------------------------------------------		
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{@{}cccc@{}}
+	\toprule
+	Volatility & Expected Return & Standard Deviation & Sharpe Ratio \\ \midrule
+	0.2        & 1.76\%          & 0.08\%             & 22.63        \\
+	0.3        & 2.30\%          & 0.19\%             & 12.33        \\
+	0.4        & 3.21\%          & 0.38\%             & 8.49         \\
+	0.5        & 6.06\%          & 0.90\%             & 6.72         \\ \bottomrule
+	\end{tabular}
+	\caption{Expected return and Sharpe ratio} 	\label{tab:prob4-b - expected return and sharpe ratio}	
+	\end{table}
+	\end{enumerate}
+%----------------------------------------------------------------------------------------	
+	From the result, it can be find that expected return increases as volatility of spot price increase, however Sharpe ratio decreases since standard deviation increases more rapidly than expected return. Therefore, from the perspective of mean-variance, increase in volatility does not seem attractive since it increases risks more than expected return.
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------	
+\newpage
 	%% ALGORITHM FOR HEDGE SIMULATION
 	\begin{algorithm}[ht]
 	\caption{Monte-Carlo Simulation for Dynamic Replication\label{alg: monte-carlo}} 
@@ -300,27 +376,4 @@
 		}
 		\Return{$\bar{P}$, $\sigma_P / \sqrt{M}$}	\tcp{$\bar{P}$: average of $P$, $\sigma_P$: standard deviation of $P$.}
 	\end{algorithm}
-%----------------------------------------------------------------------------------------	
-	\item		%% problem (c)
-	As shown in Table \ref{tab:prob3-(b): Simulation Result}, there is a large difference between analytic payoff and value of replication strategy. It is because the replication strategy cannot reflect curvature of the straddle with respect to spot price. It just replicated straddle price with respect to ``direction'' of spot price: going up or down of price. However, value of straddle is actually independent to direction of spot price. What actually matters is the amount of change in price. Payoff of straddle gets larger when spot price at maturity is far from the strike price, so volatility is the key feature. Since delta of a straddle increases as spot price increases, the position requires more underlyings if spot price gets higher and vice versa. It means the position has ``buy-high, sell-low'' strategy. The loss from ``buy-high, sell-low'' is compensated through treating curvature of straddle such as including options in replicating portfolio. However, in this portfolio, there is no such securities, therefore it cannot replicate payoff of straddle. Of course, it is possible to think that this delta-hedged portfolio should have zero value at maturity. However, it is not because the expected return of spot price is not zero. Since delta-hedging portfolio is a portfolio replicating payoff of derivatives from ``directional'' changes of underlying asset price, the portfolio has positive value because a straddle has positive value if underlying asset price goes up. If expected return of spot price is zero, expected payoff of replicating portfolio would be zero. Table \ref{tab:prob3-(c) expected payoff with zero mu} shows expected payoff of replicating portfolio when $\mu = 0$. Simulation was performed with 10,000 sample paths and 500 time steps.%----------------------------------------------------------------------------------------	
-	%% EXPECTED PAYOFF(ZERO MU)		
-	\begin{table}[ht]
-	\centering
-	\begin{tabular}{@{}ccc@{}}
-	\toprule
-	Volatility & Expected Payoff & Standard Deviation \\ \midrule
-	0.2        & -0.011          & 0.124              \\
-	0.3        & 0.116           & 0.193              \\
-	0.4        & -0.002          & 0.273              \\
-	0.5        & 0.007           & 0.359              \\ \bottomrule
-	\end{tabular}
-	\caption{Expected payoff($\mu = 0$)} 	\label{tab:prob3-(c) expected payoff with zero mu}
-	\end{table}
-%----------------------------------------------------------------------------------------	
-	Unlike results in Table \ref{tab:prob3-(b): Simulation Result}, expected payoffs are closed to zero, and all expected payoffs are within $0 \pm \sigma$ where $\sigma$ is standard deviation of simulation. It means that we cannot say expected payoffs are different to zero, statistically. Therefore, we can conclude that the replicating portfolio should not be zero unless expected return of spot price is not zero.
-	\end{enumerate}
-\end{homeworkProblem}
-\begin{homeworkProblem}
-
-\end{homeworkProblem}
 \end{document}
