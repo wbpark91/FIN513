@@ -181,17 +181,17 @@
 		d\Pi = \pdv{V}{t}dt + \frac{1}{2}S^2 \sigma^2 \pdv[2]{V}{S} dt = r\Pi dt
 	\end{equation*}
 %----------------------------------------------------------------------------------------	
-	Since parameters are given as $\pdv[2]{V}{S} = -1.725$, $S = 143$, $r = 0.05$, $\sigma = 0.7$, plugging them into the equation above, we can obtain the following result.
+	Since parameters are given as $\pdv[2]{V}{S} = -1,725$, $S = 143$, $r = 0.05$, $\sigma = 0.7$, plugging them into the equation above, we can obtain the following result.
 %----------------------------------------------------------------------------------------	
 	%% THETA OF PORTFOLIO	
 	\begin{equation*}
 	\begin{aligned}
-		& \pdv{V}{t} + \frac{1}{2} \times (143)^2 \times (0.7)^2 \times (-1.725) = 0.05 \times 30,000,000	\\
-		& \Rightarrow \pdv{V}{t} = 1,508,642.26
+		& \pdv{V}{t} + \frac{1}{2} \times (143)^2 \times (0.7)^2 \times (-1725) = 0.05 \times 30,000,000	\\
+		& \Rightarrow \pdv{V}{t} = 10,142,258.6
 	\end{aligned}
 	\end{equation*}
 %----------------------------------------------------------------------------------------
-	Assuming a year is equal to 365 days, if the stock price is unchanged, the expected value of the positions is approximately $\Pi + d\Pi = \Pi + \pdv{V}{t}dt = 30,000,000 + 1,508,642.26 \times \frac{1}{365} = 30,004,133.3$. The value might not be exact since the whole procedure was implemented on continuous time framework which is not exactly consistent to this problem. However, since $dt = \frac{1}{365}$ is small enough, errors can be ignored.
+	Assuming a year is equal to 365 days, if the stock price is unchanged, the expected value of the positions is approximately $\Pi + d\Pi = \Pi + \pdv{V}{t}dt = 30,000,000 + 10,142,258.6 \times \frac{1}{365} = 30,027,787.01$. The value might not be exact since the whole procedure was implemented on continuous time framework which is not exactly consistent to this problem. However, since $dt = \frac{1}{365}$ is small enough, errors can be ignored.
 %----------------------------------------------------------------------------------------	
 \end{homeworkProblem}
 
@@ -207,7 +207,23 @@
 		&d_2 = d_1 - \sqrt{T - t}
 		\end{aligned}
 	\end{equation*}
-	Let $p_1, p_2, p_3, p_4$ denote price of put options with time to maturity from 2 months to 5 months, respectively. Since all parameters need for valuing option are given except volatility, and it is assumed that all of options have same implied volatility, it is possible to calculate volatility by using the formula inversely. In other words, we can obtain implied volatility by searching $\sigma$ which equates sum of option prices to 2 millions. (find $\sigma$ such that $\sum_{i = 1}^4 p_i = 2,000,000$) By taking some numerical procedures, the implied volatility is calculated as about 9.63\%.
+	Let $p_1, p_2, p_3, p_4$ denote price of put options with time to maturity from 2 months to 5 months, respectively. Since all parameters need for valuing option are given except volatility, and it is assumed that all of options have same implied volatility, it is possible to calculate volatility by using the formula inversely. In other words, we can obtain implied volatility by searching $\sigma$ which equates sum of option prices to 2 millions. (find $\sigma$ such that $\sum_{i = 1}^4 p_i = 2,000,000$) By taking some numerical procedures, the implied volatility is calculated as about 9.63\%. Prices of each option are calculated as Table \ref{tab:prob2 - price of options}.
+%----------------------------------------------------------------------------------------
+	%% PRICE OF EACH OPTION
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{@{}cc@{}}
+	\toprule
+	~~Maturity & Price~~   \\ \midrule
+	~~2 months & 351,710~~ \\
+	~~3 months & 464,836~~ \\
+	~~4 months & 555,220~~ \\
+	~~5 months & 628,235~~ \\ \bottomrule
+	\end{tabular}
+	\caption{Price of options}
+	\label{tab:prob2 - price of options}
+	\end{table}
+%----------------------------------------------------------------------------------------
 \end{homeworkProblem}
 %----------------------------------------------------------------------------------------
 %	PROBLEM 3
