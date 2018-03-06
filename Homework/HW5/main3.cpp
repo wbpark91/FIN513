@@ -61,11 +61,10 @@ int main(void) {
             }
         }
         std::cout << "Expected Return: " << mean(payoffStream) << std::endl;
-        std::cout << "Standard Deviation: " << stdev(payoffStream) / sqrt(numPath) << std::endl;
-        std::cout << "Sharpe Ratio: " << mean(payoffStream) / (stdev(payoffStream) / sqrt(numPath)) << std::endl;
+        std::cout << "Standard Deviation: " << stdev(payoffStream) << std::endl;
+        std::cout << "Sharpe Ratio: " << mean(payoffStream) / (stdev(payoffStream)) << std::endl;
     }
 
 
     return 0;
 }
-
