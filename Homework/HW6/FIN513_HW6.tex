@@ -197,6 +197,48 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-
+	Under Merton model, stock price is considered as a call option of firm value,
+	with strike price is face value of a debt. Therefore, stock volatility can be calculated as follows.
+	\begin{equation*}
+		\begin{aligned}
+			&S = VN(d_1) - Fe^{-r(T - t)}N(d_2)	\\
+			&\pdv{S}{V} = N(d_1) ~~ \text{which is delta of call option.}	\\
+			&\Rightarrow stock~volatility = N(d_1) \frac{V}{VN(d_1) - Fe^{-r(T - t)}N(d_2)} \sigma_V	\\
+			&\text{where}~~d_1 = \frac{\log(V/F) + (r + \frac{1}{2}\sigma_V^2)(T - t)}{\sigma_V \sqrt{T - t}}
+						d_2 = d_1 - \sigma_V \sqrt{T - t}	\\
+						&F: \text{Face value of debt}
+		\end{aligned}
+	\end{equation*}
+	By using the formula, stock volatilities were calculated with respect to
+	stock prices from 0 to 40. The range of stock prices corresponds to
+	the range of firm value from 11 to 110. Figure \ref{fig:prob2-stock volatility under Merton Model}
+	shows the stock volatility as a function of stock price.
+%----------------------------------------------------------------------------------------
+	%% VOLATILITY ON MERTON MODEL
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale = 0.6]{HW6_prob2_merton.png}
+		\caption{Stock Volatility under Merton Model}
+		\label{fig:prob2-stock volatility under Merton Model}
+	\end{figure}
+%----------------------------------------------------------------------------------------
+	As shown in figure, stock volatility decreases as stock price increases.
+	Furthermore, under constant elasticity of variance model(CEV Model),
+	since stock price process is defined as $\frac{dS}{S} = \mu dt + \frac{\omega}{\sqrt{S}}dW$,
+	the corresponding variance of stock price is $\frac{\omega}{\sqrt{S}}$.
+	Figure \ref{fig:prob2-stock volatility under CEV Model} shows volatility
+	as a function of stock price under CEV model.
+%----------------------------------------------------------------------------------------
+	%% VOLATILITY ON CEV MODEL
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale = 0.6]{HW6_prob2_cev.png}
+		\caption{Stock Volatilty under CEV Model}
+		\label{fig:prob2-stock volatility under CEV Model}
+	\end{figure}
+%----------------------------------------------------------------------------------------
+	As shown in figure, volatility also has a decreasing feature as stock price
+	increases. However, since there is stock price in denominator term,
+	if stock price gets closer to zero, volatility increases sharply.
 \end{homeworkProblem}
 \end{document}
