@@ -1,0 +1,202 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{algorithm2e}
+
+\RestyleAlgo{boxruled}
+\LinesNumbered
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.5} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkTitle)} % Top center header
+%%\rhead{\firstxmark}
+\rhead{} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework\ \#6} % Assignment title
+\newcommand{\hmwkDueDate}{Tuesday,\ March\ 13,\ 2018} % Due date
+\newcommand{\hmwkClass}{FIN\ 513} % Course/class
+\newcommand{\hmwkClassTime}{9:30am} % Class/lecture time
+\newcommand{\hmwkAuthorName}{Wanbae Park} % Your name
+
+%----------------------------------------------------------------------------------------
+%	PARTIAL DERIVATIVES
+%----------------------------------------------------------------------------------------
+\newcommand{\pdv}[3][]{
+	\frac{\partial^{#1}{#2}}{\partial{{#3}^{#1}}}
+}
+
+%----------------------------------------------------------------------------------------
+%	EXPECTATION AND VARIANCE OPERATOR
+%----------------------------------------------------------------------------------------
+ \newcommand{\E}{\mathrm{E}}
+ \newcommand{\Var}{\mathrm{Var}}
+ \newcommand{\Cov}{\mathrm{Cov}}
+ \newcommand{\Corr}{\mathrm{Corr}}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%%\newpage
+%%\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+		\item	%% Problem (a)
+		Since yield-to-maturity is a discount rate which discount ``promised''
+		payoff to current price, $F$ is represented as $F = \frac{1}{1 + y}$.
+		\item	%% Problem (b)
+		Under risk-neutral measure, all expected return is risk-free.
+		Therefore, $F$ is represented as $F = \frac{p \times 1 + (1 - p) \times 0}{1 + R} = \frac{p}{1 + R}$.
+		\item	%% Problem (c)
+		Since expected return of the bond is $e$, and there is true survival probability $\pi$,
+		$F$ is represented as $F = \frac{\pi \times 1 + (1 - \pi) \times 0}{1 + e} = \frac{\pi}{1 + e}$.
+		\item	%% Problem (d)
+		Since $F = \frac{p}{1 + R} = \frac{\pi}{1 + e}$, $\frac{\pi}{p} = \frac{1 + R}{1 + e}$.
+		Furthermore, because the bond is risky, $e$ must be greater than $R$,
+		therefore the inequality $\frac{\pi}{p} = \frac{1 + R}{1 + e} < 1$ holds.
+		\item	%% Problem (e)
+		From (d), risk-neutral survival probability is always greater than
+		true survival probability. Since given true probability is 97\% and it is almost 100\%,
+		risk-neutral survival probability might be 100\%. It means that under risk-neutral measure,
+		expected payoff of bond is almost equal to 1. Therefore, yield-to-maturity is almost same as risk-free rate,
+		and the bond price is almost equal to face value discounted at risk-free rate.
+		Furthermore, since expected return of asset is 12\%, and firm's asset is not risk-free,
+		risk-free rate must be less than 12\%. Therefore, bond price must le larger than $\frac{1}{1.12}$.
+	\end{enumerate}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+
+\end{homeworkProblem}
+\end{document}
