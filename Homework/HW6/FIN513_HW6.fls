@@ -209,6 +209,12 @@ INPUT ./HW6_prob2_merton.png
 INPUT HW6_prob2_cev.png
 INPUT ./HW6_prob2_cev.png
 INPUT ./HW6_prob2_cev.png
+INPUT HW6_prob3_fv100.png
+INPUT ./HW6_prob3_fv100.png
+INPUT ./HW6_prob3_fv100.png
+INPUT HW6_prob3_fv50.png
+INPUT ./HW6_prob3_fv50.png
+INPUT ./HW6_prob3_fv50.png
 INPUT FIN513_HW6.aux
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
