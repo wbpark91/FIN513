@@ -14,7 +14,7 @@ int main(void) {
     PlainVanillaOption option(100.0, 5.0, Call);
 
     /* Problem 2 */
-    for (double i = 1; i <= 110; ++i) {
+    for (double i = 11; i <= 110; ++i) {
         MarketVariable mktVar(i, 0.06, 0.0, 0.20);
         option.setMarketVariable(mktVar);
         double price = option.bsprice();
