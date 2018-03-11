@@ -1,17 +1,17 @@
 #Makefile
 
 #UGL Coding
-#BASE = /Users/wanbaep2/Desktop
-#LOC = $(BASE)/FIN514/Code
-#EFILE = $(BASE)/FIN514/Homework/HW3/Result
+BASE = /Users/wanbaep2/Desktop
+LOC = $(BASE)/FIN514/Code
+EFILE = $(BASE)/FIN513/Homework/HW6/Result
 
 #Home Coding
-BASE = /Users/park-wanbae/Desktop
-LOC = $(BASE)/MFE/2018-1/FIN514/Code
+#BASE = /Users/park-wanbae/Desktop
+#LOC = $(BASE)/MFE/2018-1/FIN514/Code
 OBJS = derivatives.o *option.o *payoff.o normal.o u_math.o
 INCLS = -I$(LOC)
 CFLAGS = -std=c++11 -o
-EFILE = $(BASE)/MFE/2018-1/FIN513/Homework/HW6/Result
+#EFILE = $(BASE)/MFE/2018-1/FIN513/Homework/HW6/Result
 
 all: problem2
 derivative:
