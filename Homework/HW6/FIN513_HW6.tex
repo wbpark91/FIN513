@@ -272,11 +272,77 @@
 %----------------------------------------------------------------------------------------
 		As shown in figure, volatility multiplier remains constant if
 		volatility of firm value is low, but as volatility of firm value
-		increases, volatility multiplier starts to decrease.
-		It means that from some level, marginal increase of stock volatility
+		increases, volatility multiplier starts to decrease after a threshold
+		at some level.
+		It means that after the level, marginal increase of stock volatility
 		becomes less than the amount of increases in volatilty of firm value.
+		Moreover, it can be found that the level of threshold is higher when
+		face value of debt is lower, and volatility multiplier is higher when
+		face value of debt is higher.
 		\item	%% Problem (b)
+		If idiosyncratic risk is added, then $\sigma_V$ increases, but
+		$\pi_V$ does not increase. Therefore, $\pi_S = \pi_V \frac{\sigma_S}{\sigma_V}$
+		decreases since volatility multiplier decreases as $\sigma_V$ increases,
+		and $\pi_V$ remains constant. If $\sigma_V$ is low, changes in excess return of stock
+		would not be too much because volatilty multiplier seems almost constant
+		if $\sigma_V$ is less than threshold level.
 		\item	%% Problem (c)
+		From answer to (b), excess return of stock decreases as idiosyncratic risk
+		in firm value increases. From firm's perspective, less cost of equity capital
+		is better to sell equity in future. Therefore, managers will prefer to
+		increase idiosyncratic risk in firm value.
+	\end{enumerate}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+	\begin{enumerate}[(a)]
+		\item	%% Problem (a)
+		Under Leland model, the optimal bankruptcy covenant is derived as
+		$V_B = \frac{X}{1+X} \frac{\Gamma}{r} (1 - \Omega)$, where $X = \frac{2r}{\sigma^2}$.
+		From this result, we can analyze comparative statics of the Leland model.
+		\begin{enumerate}[(i)]
+			\item	%% Problem (i)
+			From the equation above, it can be showed that higher tax rate makes
+			$V_B$ lower since all other parameter is positive.
+			\item	%% Problem (ii)
+			In order to investigate the effect of changes in risk-free rate,
+			we can differentiate $V_B$ with respect to risk-free rate, $r$.
+			\begin{equation*}
+				\begin{aligned}
+					V_B 	&= \frac{X}{1+X} \frac{\Gamma}{r} (1 - \Omega)	\\
+							&= \Gamma (1 - \Omega) \frac{2r / \sigma^2}{1 + 2r / \sigma^2} \frac{1}{r}	\\
+							&= 2(1 - \Omega) \Gamma \frac{1}{\sigma^2 + 2r}	\\
+					\Rightarrow \frac{dV_B}{dr} &= 2(1 - \Omega) \Gamma \times (-\frac{1}{(\sigma^2 + 2r)^2} \times 2)	\\
+							&= -4(1 - \Omega) \Gamma \frac{1}{(\sigma^2 + 2r)^2} < 0
+				\end{aligned}
+			\end{equation*}
+			Therefore, higher risk-free rate makes optimal covenant level lower.
+			\item	%% Problem (iii)
+			The optimal covenant level does not include bankruptcy cost.
+			It means that $V_B$ is independent of bankruptcy cost, $\alpha$.
+		\end{enumerate}
+		\item	% Problem (b)
+		Assuming that manager of each country choose optimal coupon in order to
+		maximize firm's equity value. Under Leland model, equity value is represented as
+		$S = V_0 - (F - F^{TS} + F^{BC})$, where $F, F^{TS}, F^{BC}$ denotes
+		value of debt, tax shield, bankruptcy cost, respectively. Plug the equation
+		(5), (6), (7) in lecture note to the equation above, firm's stock price is calculated as follows.
+		\begin{equation*}
+			\begin{aligned}
+				S 	&= V_0 - \left(\frac{\Gamma}{r} + \left[(1 - \alpha)V_B - \frac{\Gamma}{r}\right] \left(\frac{V_B}{V_0} \right)^X
+						- \Omega \frac{\Gamma}{r} \left[1 - \left(\frac{V_B}{V} \right)^X \right]
+						+ \frac{\alpha}{V^X} V_B^{1 + X} \right)	\\
+					&= V_0 - \left(\frac{\Gamma}{r} + \left[V_B - \frac{\Gamma}{r}\right] \left(\frac{V_B}{V_0} \right)^X
+							- \Omega \frac{\Gamma}{r} \left[1 - \left(\frac{V_B}{V} \right)^X \right]
+						 \right)
+			\end{aligned}
+		\end{equation*}
+		From the equation above, we can find that stock price is independent of bankruptcy cost.
+		Therefore, regardless of choice in $\Gamma$, covenant level does not changes as bankruptcy cost changes,
+		if others are constant.
 	\end{enumerate}
 \end{homeworkProblem}
 \end{document}
