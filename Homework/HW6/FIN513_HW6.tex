@@ -299,7 +299,8 @@
 \begin{homeworkProblem}
 	\begin{enumerate}[(a)]
 		\item	%% Problem (a)
-		Under Leland model, the optimal bankruptcy covenant is derived as
+		Under Leland model, since others are constant,
+		the optimal bankruptcy covenant is derived as
 		$V_B = \frac{X}{1+X} \frac{\Gamma}{r} (1 - \Omega)$, where $X = \frac{2r}{\sigma^2}$.
 		From this result, we can analyze comparative statics of the Leland model.
 		\begin{enumerate}[(i)]
@@ -324,24 +325,30 @@
 			It means that $V_B$ is independent of bankruptcy cost, $\alpha$.
 		\end{enumerate}
 		\item	% Problem (b)
-		Assuming that manager of each country choose optimal coupon in order to
-		maximize firm's equity value. Under Leland model, equity value is represented as
-		$S = V_0 - (F - F^{TS} + F^{BC})$, where $F, F^{TS}, F^{BC}$ denotes
-		value of debt, tax shield, bankruptcy cost, respectively. Plug the equation
-		(5), (6), (7) in lecture note to the equation above, firm's stock price is calculated as follows.
+		Since value of debt $P$ is equal to $\frac{\Gamma}{r}$ under Leland model,
+		if others are constant, and $\Gamma$ is optimally chosen, the value of debt $P$
+		is also optimally chosen, which maximizes the firm value.
+		The optimal amount of debt is as follows.
 		\begin{equation*}
 			\begin{aligned}
-				S 	&= V_0 - \left(\frac{\Gamma}{r} + \left[(1 - \alpha)V_B - \frac{\Gamma}{r}\right] \left(\frac{V_B}{V_0} \right)^X
-						- \Omega \frac{\Gamma}{r} \left[1 - \left(\frac{V_B}{V} \right)^X \right]
-						+ \frac{\alpha}{V^X} V_B^{1 + X} \right)	\\
-					&= V_0 - \left(\frac{\Gamma}{r} + \left[V_B - \frac{\Gamma}{r}\right] \left(\frac{V_B}{V_0} \right)^X
-							- \Omega \frac{\Gamma}{r} \left[1 - \left(\frac{V_B}{V} \right)^X \right]
-						 \right)
+				P^* &= \frac{V_0}{n} \left[ 1 + X + \alpha X \frac{1 - \Omega}{\Omega} \right]^{-1/X}	\\
+				V_B &= nP	\\
+				0 < &n < 1
 			\end{aligned}
 		\end{equation*}
-		From the equation above, we can find that stock price is independent of bankruptcy cost.
-		Therefore, regardless of choice in $\Gamma$, covenant level does not changes as bankruptcy cost changes,
-		if others are constant.
+		To find how $\alpha$ affects $V_B$, we can differentiate $V_B$ with respect to $\alpha$.
+		The result is as follows.
+		\begin{equation*}
+			\begin{aligned}
+				\pdv{V_B}{\alpha} &= -\frac{1}{X} V_0 \left(1 + X + \alpha
+						\frac{1 - \Omega}{\Omega} \right)^{-\frac{1}{X} - 1}
+						\times \frac{1 - \Omega}{\Omega}
+			\end{aligned}
+		\end{equation*}
+		Since $X > 0$, $\frac{1 - \Omega}{\Omega} > 0$, $V_0 > 0$, and $\alpha > 0$,
+		partial derivative of $V_B$ with respect to $\alpha$ has negative value.
+		It means that if bankruptcy cost increases, optimal covenant value decreases
+		under assumption that others are constant.
 	\end{enumerate}
 \end{homeworkProblem}
 \end{document}
