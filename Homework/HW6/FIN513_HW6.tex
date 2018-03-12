@@ -204,42 +204,41 @@
 			&S = VN(d_1) - Fe^{-r(T - t)}N(d_2)	\\
 			&\pdv{S}{V} = N(d_1) ~~ \text{which is delta of call option.}	\\
 			&\Rightarrow stock~volatility = N(d_1) \frac{V}{VN(d_1) - Fe^{-r(T - t)}N(d_2)} \sigma_V	\\
-			&\text{where}~~d_1 = \frac{\log(V/F) + (r + \frac{1}{2}\sigma_V^2)(T - t)}{\sigma_V \sqrt{T - t}}
-						d_2 = d_1 - \sigma_V \sqrt{T - t}	\\
+			&\text{where}~~d_1 = \frac{\log(V/F) + (r + \frac{1}{2}\sigma_V^2)(T - t)}{\sigma_V \sqrt{T - t}}	\\
+						&~~~~~~~~~~d_2 = d_1 - \sigma_V \sqrt{T - t}	\\
 						&F: \text{Face value of debt}
 		\end{aligned}
 	\end{equation*}
 	By using the formula, stock volatilities were calculated with respect to
 	stock prices from 0 to 40. The range of stock prices corresponds to
-	the range of firm value from 11 to 110. Figure \ref{fig:prob2-stock volatility under Merton Model}
-	shows the stock volatility as a function of stock price.
-%----------------------------------------------------------------------------------------
-	%% VOLATILITY ON MERTON MODEL
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale = 0.6]{HW6_prob2_merton.png}
-		\caption{Stock Volatility under Merton Model}
-		\label{fig:prob2-stock volatility under Merton Model}
-	\end{figure}
-%----------------------------------------------------------------------------------------
-	As shown in figure, stock volatility decreases as stock price increases.
+	the range of firm value from 11 to 110.
 	Furthermore, under constant elasticity of variance model(CEV Model),
 	since stock price process is defined as $\frac{dS}{S} = \mu dt + \frac{\omega}{\sqrt{S}}dW$,
 	the corresponding variance of stock price is $\frac{\omega}{\sqrt{S}}$.
-	Figure \ref{fig:prob2-stock volatility under CEV Model} shows volatility
-	as a function of stock price under CEV model.
+	Figure \ref{fig:prob2-stock volatility under each model}
+	shows the stock volatility as a function of stock price.
 %----------------------------------------------------------------------------------------
-	%% VOLATILITY ON CEV MODEL
+	%% VOLATILITY ON EACH MODEL
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[scale = 0.6]{HW6_prob2_cev.png}
-		\caption{Stock Volatilty under CEV Model}
-		\label{fig:prob2-stock volatility under CEV Model}
+		\begin{subfigure}{.5\textwidth}
+			\includegraphics[scale = 0.5]{HW6_prob2_merton.png}
+			\caption{Merton model}
+			\label{fig:prob2-stock volatility under Merton Model}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\includegraphics[scale = 0.5]{HW6_prob2_cev.png}
+			\caption{CEV model}
+			\label{fig:prob2-stock volatility under CEV Model}
+		\end{subfigure}
+		\caption{Stock volatility of Merton and CEV Model}
+		\label{fig:prob2-stock volatility under each model}
 	\end{figure}
 %----------------------------------------------------------------------------------------
-	As shown in figure, volatility also has a decreasing feature as stock price
-	increases. However, since there is stock price in denominator term,
-	if stock price gets closer to zero, volatility increases sharply.
+	As shown in figure, stock volatility decreases as stock price increases on both models.
+	However, since there is stock price in denominator term,
+	if stock price gets closer to zero, volatility increases sharply on CEV model,
+	whereas volatility increases smoothly on Merton model.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -250,24 +249,24 @@
 		\item	%% Problem (a)
 		Using the formula in question 2, volatilty multiplier was calculated
 		for each volatility and face value.
-		Figure \ref{fig:prob2-Volatility multiplier-fv=100} and
-		\ref{fig:prob2-Volatility multiplier-fv=50} show volatilty multiplier
+		Figure \ref{fig:prob2-Volatility multiplier} show volatilty multiplier
 		with each face value with respect to volatility of firm value.
 %----------------------------------------------------------------------------------------
-		%% VOLATILITY MULTIPLIER WITH FACE VALUE 100
+	%% VOLATILITY MULTIPLIER
 		\begin{figure}[ht]
 			\centering
-			\includegraphics[scale = 0.6]{HW6_prob3_fv100.png}
-			\caption{Volatility multiplier with face value 100}
-			\label{fig:prob2-Volatility multiplier-fv=100}
-		\end{figure}
-%----------------------------------------------------------------------------------------
-	%% VOLATILITY MULTIPLIER WITH FACE VALUE 50
-		\begin{figure}[ht]
-			\centering
-			\includegraphics[scale = 0.6]{HW6_prob3_fv50.png}
-			\caption{Volatility multiplier with face value 50}
-			\label{fig:prob2-Volatility multiplier-fv=50}
+			\begin{subfigure}{.5\textwidth}
+				\includegraphics[scale = 0.5]{HW6_prob3_fv100.png}
+				\caption{Face value: 100}
+				\label{fig:prob2-Volatility multiplier-fv=100}
+			\end{subfigure}%
+			\begin{subfigure}{.5\textwidth}
+				\includegraphics[scale = 0.5]{HW6_prob3_fv50.png}
+				\caption{Face value: 50}
+				\label{fig:prob2-Volatility multiplier-fv=50}
+			\end{subfigure}
+			\caption{Volatility Multiplier}
+			\label{fig:prob2-Volatility multiplier}
 		\end{figure}
 %----------------------------------------------------------------------------------------
 		As shown in figure, volatility multiplier remains constant if
