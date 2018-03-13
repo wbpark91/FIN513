@@ -192,12 +192,12 @@
 		\begin{figure}[ht]
 			\centering
 			\begin{subfigure}{.5\textwidth}
-				\includegraphics[scale = 0.5]{HW6_prob1_asset.png}
+				\includegraphics[scale = 0.45]{HW6_prob1_asset.png}
 				\caption{Asset}
 				\label{fig:prob1-asset plot}
 			\end{subfigure}%
 			\begin{subfigure}{.5\textwidth}
-				\includegraphics[scale = 0.5]{HW6_prob1_bond.png}
+				\includegraphics[scale = 0.45]{HW6_prob1_bond.png}
 				\caption{Bond}
 				\label{fig:prob1-bond plot}
 			\end{subfigure}
@@ -294,6 +294,9 @@
 		at some level.
 		It means that after the level, marginal increase of stock volatility
 		becomes less than the amount of increases in volatilty of firm value.
+		In other words, since risk of an asset is measured by volatility,
+		if firm's total risk increases, then the proportion of equity risk
+		among total firm risk decreases.
 		Moreover, it can be found that the level of threshold is higher when
 		face value of debt is lower, and volatility multiplier is higher when
 		face value of debt is higher.
@@ -303,7 +306,18 @@
 		decreases since volatility multiplier decreases as $\sigma_V$ increases,
 		and $\pi_V$ remains constant. If $\sigma_V$ is low, changes in excess return of stock
 		would not be too much because volatilty multiplier seems almost constant
-		if $\sigma_V$ is less than threshold level.
+		if $\sigma_V$ is less than threshold level. At first glance, it seems weird
+		because in many finance context, risk premium increases as risk increases.
+		Of course, risk premium increases as risk increases, however,
+		it is important to note that the risk which makes risk premium increase
+		is ``systematic'' risk, not idiosyncratic risk.
+		In this case, the increased risk is idiosyncratic risk. It means that
+		firm's total risk was increased, but systematic risk remains constant.
+		As the proportion of equity risk among total firm risk decreases as
+		firm risk increases, ``systematic'' equity risk decreases since total
+		systematic risk remains constant. In other words, increase in idiosyncratic
+		risk transferred systematic risk from equity holder to debt holder. Hence
+		risk premium of equity decreases.
 		\item	%% Problem (c)
 		From answer to (b), excess return of stock decreases as idiosyncratic risk
 		in firm value increases. From firm's perspective, less cost of equity capital
@@ -351,8 +365,8 @@
 		\begin{equation*}
 			\begin{aligned}
 				P^* &= \frac{V_0}{n} \left[ 1 + X + \alpha X \frac{1 - \Omega}{\Omega} \right]^{-1/X}	\\
-				V_B &= nP	\\
-				0 < &n < 1
+				V_B &= nP^*	\\
+				0 <  &n < 1
 			\end{aligned}
 		\end{equation*}
 		To find how $\alpha$ affects $V_B$, we can differentiate $V_B$ with respect to $\alpha$.
