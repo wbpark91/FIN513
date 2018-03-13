@@ -9,10 +9,10 @@ setwd("/Users/park-wanbae/Desktop/MFE/2018-1/FIN513/Homework/HW6")
 problem1 = read.csv("problem1.csv")
 
 plot(problem1$X...Asset, problem1$X...Asset, type = 'l',
-     xlab = "Asset", ylab = "Asset")
+     xlab = "Asset", ylab = "Asset", ylim = c(0, 2))
 
 plot(problem1$X...Asset, problem1$Bond, type = 'l',
-     xlab = "Asset", ylab = "Bond")
+     xlab = "Asset", ylab = "Bond", ylim = c(0, 2))
 
 # PROBLEM 2
 problem2 = read.csv("problem2.csv")
