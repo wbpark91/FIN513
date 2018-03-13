@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.24)  11 MAR 2018 23:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.24)  12 MAR 2018 23:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -479,26 +479,45 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros [1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <HW6_prob2_merton.png, id=12, 455.7025pt x 408.52625pt>
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <HW6_prob1_asset.png, id=12, 472.76625pt x 370.38374pt>
+File: HW6_prob1_asset.png Graphic file (type png)
+ <use HW6_prob1_asset.png>
+Package pdftex.def Info: HW6_prob1_asset.png used on input line 195.
+(pdftex.def)             Requested size: 236.38254pt x 185.1914pt.
+
+Overfull \hbox (1.50505pt too wide) in paragraph at lines 195--196
+[][] 
+ []
+
+<HW6_prob1_bond.png, id=14, 472.76625pt x 370.38374pt>
+File: HW6_prob1_bond.png Graphic file (type png)
+ <use HW6_prob1_bond.png>
+Package pdftex.def Info: HW6_prob1_bond.png used on input line 200.
+(pdftex.def)             Requested size: 236.38254pt x 185.1914pt.
+
+Overfull \hbox (1.50505pt too wide) in paragraph at lines 200--201
+[][] 
+ []
+
+[2 <./HW6_prob1_asset.png> <./HW6_prob1_bond.png>] <HW6_prob2_merton.png, id=24, 455.7025pt x 408.52625pt>
 File: HW6_prob2_merton.png Graphic file (type png)
  <use HW6_prob2_merton.png>
-Package pdftex.def Info: HW6_prob2_merton.png used on input line 225.
+Package pdftex.def Info: HW6_prob2_merton.png used on input line 244.
 (pdftex.def)             Requested size: 227.85068pt x 204.26262pt.
- <HW6_prob2_cev.png, id=14, 455.7025pt x 408.52625pt>
+ <HW6_prob2_cev.png, id=25, 455.7025pt x 408.52625pt>
 File: HW6_prob2_cev.png Graphic file (type png)
  <use HW6_prob2_cev.png>
-Package pdftex.def Info: HW6_prob2_cev.png used on input line 230.
+Package pdftex.def Info: HW6_prob2_cev.png used on input line 249.
 (pdftex.def)             Requested size: 227.85068pt x 204.26262pt.
- [2]
-<HW6_prob3_fv100.png, id=23, 455.7025pt x 408.52625pt>
+ <HW6_prob3_fv100.png, id=26, 455.7025pt x 408.52625pt>
 File: HW6_prob3_fv100.png Graphic file (type png)
  <use HW6_prob3_fv100.png>
-Package pdftex.def Info: HW6_prob3_fv100.png used on input line 259.
+Package pdftex.def Info: HW6_prob3_fv100.png used on input line 278.
 (pdftex.def)             Requested size: 227.85068pt x 204.26262pt.
- <HW6_prob3_fv50.png, id=24, 455.7025pt x 408.52625pt>
+ <HW6_prob3_fv50.png, id=27, 455.7025pt x 408.52625pt>
 File: HW6_prob3_fv50.png Graphic file (type png)
  <use HW6_prob3_fv50.png>
-Package pdftex.def Info: HW6_prob3_fv50.png used on input line 264.
+Package pdftex.def Info: HW6_prob3_fv50.png used on input line 283.
 (pdftex.def)             Requested size: 227.85068pt x 204.26262pt.
  [3 <./HW6_prob2_merton.png> <./HW6_prob2_cev.png>] [4 <./HW6_prob3_fv100.png> <./HW6_prob3_fv50.png>] 
 AED: lastpage setting LastPage
@@ -508,18 +527,18 @@ AED: lastpage setting LastPage
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14578 strings out of 493014
- 283585 string characters out of 6133351
- 437163 words of memory out of 5000000
- 17853 multiletter control sequences out of 15000+600000
- 9321 words of font info for 34 fonts, out of 8000000 for 9000
+ 14598 strings out of 493014
+ 283976 string characters out of 6133351
+ 436205 words of memory out of 5000000
+ 17868 multiletter control sequences out of 15000+600000
+ 10159 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,54p,414b,2269s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on FIN513_HW6.pdf (5 pages, 191201 bytes).
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on FIN513_HW6.pdf (5 pages, 218262 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

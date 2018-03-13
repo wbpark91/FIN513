@@ -167,6 +167,7 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
+	Assume that face value of the bond is equal to 1.
 	\begin{enumerate}[(a)]
 		\item	%% Problem (a)
 		Since yield-to-maturity is a discount rate which discount ``promised''
@@ -178,17 +179,35 @@
 		Since expected return of the bond is $e$, and there is true survival probability $\pi$,
 		$F$ is represented as $F = \frac{\pi \times 1 + (1 - \pi) \times 0}{1 + e} = \frac{\pi}{1 + e}$.
 		\item	%% Problem (d)
-		Since $F = \frac{p}{1 + R} = \frac{\pi}{1 + e}$, $\frac{\pi}{p} = \frac{1 + R}{1 + e}$.
+		Since $F = \frac{p}{1 + R} = \frac{\pi}{1 + e}$, $\frac{\pi}{p} = \frac{1 + e}{1 + R}$.
 		Furthermore, because the bond is risky, $e$ must be greater than $R$,
-		therefore the inequality $\frac{\pi}{p} = \frac{1 + R}{1 + e} < 1$ holds.
+		therefore the inequality $\frac{\pi}{p} = \frac{1 + e}{1 + R} > 1$ holds.
 		\item	%% Problem (e)
-		From (d), risk-neutral survival probability is always greater than
-		true survival probability. Since given true probability is 97\% and it is almost 100\%,
-		risk-neutral survival probability might be 100\%. It means that under risk-neutral measure,
-		expected payoff of bond is almost equal to 1. Therefore, yield-to-maturity is almost same as risk-free rate,
-		and the bond price is almost equal to face value discounted at risk-free rate.
-		Furthermore, since expected return of asset is 12\%, and firm's asset is not risk-free,
-		risk-free rate must be less than 12\%. Therefore, bond price must le larger than $\frac{1}{1.12}$.
+		As shown in Figure \ref{fig:prob1-asset and bond payoff},
+		payoff of a bond has a upper bound unlike payoff of asset.
+		In other words, although asset value becomes larger than face value of bond,
+		payoff of bond does not increases as asset value increases.
+%----------------------------------------------------------------------------------------
+	%% ASSET AND BOND PAYOFF
+		\begin{figure}[ht]
+			\centering
+			\begin{subfigure}{.5\textwidth}
+				\includegraphics[scale = 0.5]{HW6_prob1_asset.png}
+				\caption{Asset}
+				\label{fig:prob1-asset plot}
+			\end{subfigure}%
+			\begin{subfigure}{.5\textwidth}
+				\includegraphics[scale = 0.5]{HW6_prob1_bond.png}
+				\caption{Bond}
+				\label{fig:prob1-bond plot}
+			\end{subfigure}
+			\caption{Payoff of asset and bond}
+			\label{fig:prob1-asset and bond payoff}
+		\end{figure}
+%----------------------------------------------------------------------------------------
+		Therefore, true expected return of a bond would be lower than
+		expected return of the asset, which is 12\%, hence by (c), price of bond
+		would be larger than $\frac{\pi}{1 + \mu} = \frac{0.97}{1.12}$.
 	\end{enumerate}
 \end{homeworkProblem}
 
@@ -210,7 +229,7 @@
 		\end{aligned}
 	\end{equation*}
 	By using the formula, stock volatilities were calculated with respect to
-	stock prices from 0 to 40. The range of stock prices corresponds to
+	stock prices from about 0 to 40. The range of stock prices corresponds to
 	the range of firm value from 11 to 110.
 	Furthermore, under constant elasticity of variance model(CEV Model),
 	since stock price process is defined as $\frac{dS}{S} = \mu dt + \frac{\omega}{\sqrt{S}}dW$,
@@ -228,7 +247,7 @@
 		\end{subfigure}%
 		\begin{subfigure}{.5\textwidth}
 			\includegraphics[scale = 0.5]{HW6_prob2_cev.png}
-			\caption{CEV model}
+			\caption{CEV model($\omega = 1$)}
 			\label{fig:prob2-stock volatility under CEV Model}
 		\end{subfigure}
 		\caption{Stock volatility of Merton and CEV Model}
