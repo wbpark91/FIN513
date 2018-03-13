@@ -1,5 +1,18 @@
 library(plotrix)
-setwd("/Users/wanbaep2/Desktop/FIN513/Homework/HW6")
+#AT HOME
+setwd("/Users/park-wanbae/Desktop/MFE/2018-1/FIN513/Homework/HW6")
+
+#AT LIBRARY
+#setwd("/Users/wanbaep2/Desktop/FIN513/Homework/HW6")
+
+# PROBLEM 1
+problem1 = read.csv("problem1.csv")
+
+plot(problem1$X...Asset, problem1$X...Asset, type = 'l',
+     xlab = "Asset", ylab = "Asset")
+
+plot(problem1$X...Asset, problem1$Bond, type = 'l',
+     xlab = "Asset", ylab = "Bond")
 
 # PROBLEM 2
 problem2 = read.csv("problem2.csv")
