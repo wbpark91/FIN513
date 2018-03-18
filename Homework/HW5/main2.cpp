@@ -19,10 +19,7 @@ int main(void) {
     double steps = 500;
     double numPath = 50000;
 
-
-
     double dt = maturity / steps;
-
 
     /* Random Number Generator */
     std::mt19937_64 gen;
