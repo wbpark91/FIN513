@@ -2,32 +2,34 @@
 
 #UGL Coding
 #BASE = /Users/wanbaep2/Desktop
-#LOC = $(BASE)/FIN514/Code
+#LOC = $(BASE)/Derivatives
 EFILE = $(BASE)/FIN513/Homework/HW5/Result
 
 #Home Coding
 BASE = /Users/park-wanbae/Desktop
-LOC = $(BASE)/MFE/2018-1/FIN514/Code
+LOC = $(BASE)/MFE/2018-1/Derivatives
+OPTION = $(LOC)/option
+ETC = $(LOC)/etc
 OBJS = derivatives.o *option.o *payoff.o normal.o u_math.o
-INCLS = -I$(LOC)
+INCLS = -I$(ETC) -I$(OPTION)
 CFLAGS = -std=c++11 -o
 #EFILE = $(BASE)/MFE/2018-1/FIN513/Homework/HW6/Result
 
 all: problem3 problem4a problem4b
 derivative:
-	g++ $(INCLS) -c $(LOC)/derivatives.cpp
+	g++ $(INCLS) -c $(OPTION)/derivatives.cpp
 
 option:
-	g++ $(INCLS) -c $(LOC)/plainvanilla_option.cpp \
-					$(LOC)/european_option.cpp \
-					$(LOC)/straddle.cpp	\
-					$(LOC)/option.cpp
+	g++ $(INCLS) -c $(OPTION)/plainvanilla_option.cpp \
+					$(OPTION)/european_option.cpp \
+					$(OPTION)/straddle.cpp	\
+					$(OPTION)/option.cpp
 
 payoff:
-	g++ $(INCLS) -c	$(LOC)/plainvanilla_payoff.cpp
+	g++ $(INCLS) -c	$(OPTION)/plainvanilla_payoff.cpp
 
 etc:
-	g++ $(INCLS) -c $(LOC)/normal.cpp $(LOC)/u_math.cpp
+	g++ $(INCLS) -c $(ETC)/normal.cpp $(ETC)/u_math.cpp
 
 problem3: derivative option payoff etc
 	g++ $(INCLS) $(CFLAGS) problem3_b main.cpp $(OBJS) straddle.o
