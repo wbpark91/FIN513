@@ -253,6 +253,33 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
+	Setting $r_0 = 3.675\%$, which is 3-month maturity yield, using the formula
+	from the lecture note, $G_0$ and $G_1$ were calculated first.
+	By using calculated $G_0$ and $G_1$, and changing $r^*$, bond prices and
+	zero coupon rates were calculated by using the following formula.
+	\begin{equation*}
+		\begin{aligned}
+			B_{0, T} &= e^{G_0(0, T) - r_0G_1(0, T)}	\\
+			G_0(0, T) &= \frac{1}{\kappa^2}(G_1(0, T) - T)(r^* \kappa^2 - \frac{b^2}{2})
+					- \frac{(bG_1(0, T))^2}{4\kappa}	\\
+			G_1(0, T) &= \frac{1}{\kappa}(1 - e^(-\kappa T))	\\
+			r_T &= -\frac{\log B_{0, T}}{T}	\\
+		\end{aligned}
+	\end{equation*}
+	Using excel solver, the optimal $r^*$ which minimizes average absolute
+	error between market rate and model rate was calculated. It was calculated
+	as about 4.614\%. Average absolute error was calculated as about 0.0003.
+	Figure \ref{fig:prob4-result} shows plot of fitted curve and actual curve.
+	Fitted curve has monotonically increasing feature. Actual curve, in contrast,
+	has a humped shape.
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale = 0.7]{problem4_result.png}
+		\caption{Market yield and model yield}
+		\label{fig:prob4-result}
+	\end{figure}
+	Table \ref{tab:prob4-result} shows the optimization result.
+	\input{problem4_result.tex}
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
