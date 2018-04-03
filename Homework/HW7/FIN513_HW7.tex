@@ -191,6 +191,7 @@
 		Since the market price of volatility risk is given as
 		$\lambda(v) = \lambda_0 + \lambda_1 v$, risk-neutralized process
 		of $v$ is derived as follows.
+		%% EQUATION
 		\begin{equation*}
 			\begin{aligned}
 				dv_t 	&= \kappa(\bar{v} - v_t)dt - \lambda(v) s_v dt + s_vdW_t^v	\\
@@ -205,6 +206,34 @@
 		Since $\kappa^*$ and $\bar{v}^*$ are constant, $v_t$ follows
 		Ornstein-Uhlenbeck process under risk-neutral measure.
 		\item	%% problem (b)
+		Let $F$ denote forward price for the contract.
+		If there is no arbitrage opportunity, $F$ should satisfy the following
+		equation.
+		\begin{equation*}
+			\begin{aligned}
+				\E^*[B_{0, T} (\sigma_T - F)] = 0	\\
+				\Rightarrow F = \E^*[\sigma_T]
+			\end{aligned}
+		\end{equation*}
+		Where $B_{0, T}$ denotes discount factor from current date to the
+		maturity and $\E^*$ denotes expectation operator under risk-neutral
+		measure.
+		It is known that a random variable which follows Ornstein-Uhlenbeck
+		process is normally distributed, so $v_t = \log \sigma_t^2$ is
+		normally distributed. Therefore, there is a closed form of $\E^*[\sigma_T]$.
+		From the analogy of distribution in lecture note 7.2, $v_T$ is distributed
+		as $N(v_0 e^{-\kappa^* T} + \bar{v}^* (1 - e^{\kappa^* T}),
+			\frac{s_v^2}{2\kappa^*}(1 - e^{-2\kappa^* T}))$.
+		Since $\E^*[\sigma_T] = \E^*[e^{\frac{1}{2}v_T}]$, and $\frac{1}{2}V_T$
+		is distributed as $N(\frac{1}{2}[v_0 e^{-\kappa^* T}
+						+ \bar{v}^* (1 - e^{\kappa^* T})],
+						\frac{s_v^2}{8\kappa^*}(1 - e^{-2\kappa^* T}))$,
+		no arbitrage forward price is derived as follows.
+		\begin{equation*}
+			F = \E^*[\sigma_T] = e^{\frac{1}{2}[v_0 e^{-\kappa^* T}
+							+ \bar{v}^* (1 - e^{\kappa^* T})] +
+							\frac{s_v^2}{16\kappa^*}(1 - e^{-2\kappa^* T})}
+		\end{equation*}
 		\item	%% problem (c)
 	\end{enumerate}
 \end{homeworkProblem}
