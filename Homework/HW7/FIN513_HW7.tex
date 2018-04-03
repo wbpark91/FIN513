@@ -188,6 +188,22 @@
 \begin{homeworkProblem}
 	\begin{enumerate}[(a)]
 		\item	%% problem (a)
+		Since the market price of volatility risk is given as
+		$\lambda(v) = \lambda_0 + \lambda_1 v$, risk-neutralized process
+		of $v$ is derived as follows.
+		\begin{equation*}
+			\begin{aligned}
+				dv_t 	&= \kappa(\bar{v} - v_t)dt - \lambda(v) s_v dt + s_vdW_t^v	\\
+						&= (\kappa \bar{v} - \lambda_0 s_v -
+							(\kappa + \lambda_1 s_v)v_t)dt
+							+ s_v dW_t^v	\\
+						&= k^* (\bar{v}^* - v_t)dt + s_v dW_t^v	\\
+			\end{aligned}
+		\end{equation*}
+		where $\kappa^* = \kappa + \lambda_1 s_v$, and
+		$\bar{v}^* = \frac{\kappa \bar{v} - \lambda_0 s_v}{\kappa^*}$.
+		Since $\kappa^*$ and $\bar{v}^*$ are constant, $v_t$ follows
+		Ornstein-Uhlenbeck process under risk-neutral measure.
 		\item	%% problem (b)
 		\item	%% problem (c)
 	\end{enumerate}
