@@ -2,16 +2,19 @@
 #include <cmath>
 
 /* Consturctors and Destructor */
-OUProcess::OUProcess(double speed, double lmean, double vol, double risk)
-    :mSpeed(speed), mLmean(lmean), mVol(vol), mPriceRisk(risk) { }
+OUProcess::OUProcess(double currentValue, double speed, double lmean,
+                    double vol, double risk)
+    :mCurrentValue(currentValue), mSpeed(speed), mLmean(lmean),
+     mVol(vol), mPriceRisk(risk) { }
 
 OUProcess::~OUProcess() { }
 
 /* get functions */
+double OUProcess::getCurrentValue() const { return mCurrentValue; }
 double OUProcess::getSpeed() const { return mSpeed; }
 double OUProcess::getLmean() const { return mLmean; }
 double OUProcess::getVol() const { return mVol; }
-double OUProcess::getPriceRisk() const {return mPriceRisk; }
+double OUProcess::getPriceRisk() const { return mPriceRisk; }
 
 /* get G0 and G1 */
 double OUProcess::getG0(double t) {
