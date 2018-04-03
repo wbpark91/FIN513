@@ -7,9 +7,6 @@ public:
     OUProcess(double speed, double lmean, double vol, double risk);
     ~OUProcess();
 
-    /* get values at time t: for simulation(risk-neutralized) */
-    double getValue(double t);
-
     /* get G0 and G1 */
     double getG0(double t);
     double getG1(double t);
