@@ -25,7 +25,7 @@ void SnowballSwap::determineSpread(double r) {
         spread.mSpread = MAX(0, spread.mSpread - spread.mMinus);
 }
 
-std::pair<double, double> SnowballSwap::mcPrice(unsigned int numPath,
+std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
                                                 unsigned int numStep) {
     /* get data from process */
     double r0 = mProcess.mCurrentValue;
@@ -94,10 +94,5 @@ std::pair<double, double> SnowballSwap::mcPrice(unsigned int numPath,
         }
         result[i] = value;  /* discounted cash flow at i_th path */
     }
-
-    /* calculate average and standard deviation */
-    price.first = average(result);
-    price.second = stdev(result) / sqrt(numPath);
-
-    return price;
+    return result;
 }
