@@ -7,6 +7,7 @@ enum CompFreq { Annual = 1, SemiAnnual = 2, Quarter = 4 }
 
 /* Spread handler */
 struct SnowballSpread {
+    double mSpread;     /* amount of spread */
     double mLower;      /* lower bound of the range */
     double mUpper;      /* upper bound of the range */
     double mLeverage;
