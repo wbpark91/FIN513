@@ -1,7 +1,6 @@
 #ifndef _SNOWBALL_SWAP_H_
 #define _SNOWBALL_SWAP_H_
 #include "ou_process.h"
-#include <utility>
 
 enum CompFreq { Annual = 1, SemiAnnual = 2, Quarter = 4 }
 
@@ -24,7 +23,7 @@ public:
     void setProcess(OUProcess process);
 
     /* Monte-Carlo simulation: return mean and standard deviation */
-    std::pair<double, double> mcPrice(unsigned int numPath, unsigned int numStep);
+    std::vector<double> mcPrice(unsigned int numPath, unsigned int numStep);
 private:
     double mNotional;       /* notional amount */
     double mFixedRate;      /* fixed rate */
