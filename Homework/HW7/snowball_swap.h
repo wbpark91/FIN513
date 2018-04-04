@@ -8,8 +8,8 @@ enum CompFreq { Annual = 1, SemiAnnual = 2, Quarter = 4 }
 class SnowballSwap {
 public:
     /* Constructors and destructor */
-    SnowballSwap(double fixedRate, double spread, double maturity,
-                double startDate, CompFreq freq);
+    SnowballSwap(double notional, double fixedRate, double spread,
+                double maturity, double startDate, CompFreq freq);
     ~SnowballSwap();
 
     void setProcess(OUProcess process);
@@ -17,6 +17,7 @@ public:
     /* Monte-Carlo simulation: return mean and standard deviation */
     std::pair<double, double> mcPrice(unsigned int numPath, unsigned int numStep);
 private:
+    double mNotional;       /* notional amount */
     double mFixedRate;      /* fixed rate */
     double mSpread;         /* spread */
     double mMaturity;       /* maturity */
