@@ -17,24 +17,24 @@ void SnowballSwap::setProcess(OUProcess process) {
 }
 
 void SnowballSwap::determineSpread(double r) {
-    if (r > spread.mUpper)
-        spread.mSpread += spread.mLeverage * (r - spread.mUpper);
-    else if (r < spread.mLower)
-        spread.mSpread += spread.mLeverage * (spread.mLower - r);
+    if (r > mSpread.mUpper)
+        mSpread.mAmount += mSpread.mLeverage * (r - mSpread.mUpper);
+    else if (r < mSpread.mLower)
+        mSpread.mAmount += mSpread.mLeverage * (mSpread.mLower - r);
     else
-        spread.mSpread = MAX(0, spread.mSpread - spread.mMinus);
+        mSpread.mAmount = MAX(0, mSpread.mAmount - mSpread.mMinus);
 }
 
 std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
                                                 unsigned int numStep) {
     /* get data from process */
-    double r0 = mProcess.mCurrentValue;
-    double vol = mProcess.mVol;
-    double lambda = mProcess.mPriceRisk;
-    double kappa = mProcess.mSpeed;
+    double r0 = mProcess.getCurrentValue();
+    double vol = mProcess.getVol();
+    double lambda = mProcess.getPriceRisk();
+    double kappa = mProcess.getSpeed();
 
     /* risk-neutralize */
-    double lrMean = mProcess.mLmean - lambda * vol / kappa;
+    double lrMean = mProcess.getLmean() - lambda * vol / kappa;
 
     double dt = mMaturity / (double)numStep;
     double discount;
@@ -79,7 +79,7 @@ std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
             /* if payment date */
             if (fabs((j + 1) * dt - paymentDate) < 1e-06) {
                 /* pay */
-                value -= discount * mNotional * spread.mSpread;
+                value -= discount * mNotional * mSpread.mAmount;
                 /* update next payment date */
                 paymentDate += freq;
             }

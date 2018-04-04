@@ -1,12 +1,13 @@
 #ifndef _SNOWBALL_SWAP_H_
 #define _SNOWBALL_SWAP_H_
 #include "ou_process.h"
+#include <vector>
 
-enum CompFreq { Annual = 1, SemiAnnual = 2, Quarter = 4 }
+enum CompFreq { Annual = 1, SemiAnnual = 2, Quarter = 4 };
 
 /* Spread handler */
 struct SnowballSpread {
-    double mSpread;     /* amount of spread */
+    double mAmount;     /* amount of spread */
     double mLower;      /* lower bound of the range */
     double mUpper;      /* upper bound of the range */
     double mLeverage;
@@ -18,6 +19,7 @@ public:
     /* Constructors and destructor */
     SnowballSwap(double notional, double fixedRate, SnowballSpread spread,
                 double maturity, double startDate, CompFreq freq);
+    SnowballSwap() { };
     ~SnowballSwap();
 
     void setProcess(OUProcess process);
