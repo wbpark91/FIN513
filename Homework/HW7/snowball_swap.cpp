@@ -3,6 +3,7 @@
 #include "u_math.h"
 #include <cmath>
 #include <random>
+#include <iostream>
 
 SnowballSwap::SnowballSwap(double notional, double fixedRate,
             SnowballSpread spread, double maturity, double startDate,
@@ -72,12 +73,12 @@ std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
             r = r * exp(-kappa * dt) + expLmean + diffusion * e;
 
             /* at every 3 month */
-            if (std::fmod((j + 1) * dt, freq) < 1e-06) {
+            if (std::fmod((j + 1) * dt, freq) < 1e-03) {
                 value += discount * mNotional * mFixedRate * freq;
             }
 
             /* if payment date */
-            if (fabs((j + 1) * dt - paymentDate) < 1e-06) {
+            if (fabs((j + 1) * dt - paymentDate) < 1e-03) {
                 /* pay */
                 value -= discount * mNotional * mSpread.mAmount;
                 /* update next payment date */
@@ -85,12 +86,14 @@ std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
             }
 
             /* if calculation date */
-            if (fabs((j + 1) * dt - calcDate) < 1e-06) {
+            if (fabs((j + 1) * dt - calcDate) < 1e-03) {
                 /* determine spread */
                 determineSpread(r);
                 /* update next calculation date */
                 calcDate += freq;
             }
+
+            // std::cout <<calcDate<< ", " << (j+1) * dt << ", " << r << ", " << value << ", " << mSpread.mAmount << std::endl;
         }
         result[i] = value;  /* discounted cash flow at i_th path */
     }
