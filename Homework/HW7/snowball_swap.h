@@ -5,10 +5,17 @@
 
 enum CompFreq { Annual = 1, SemiAnnual = 2, Quarter = 4 }
 
+/* Spread handler */
+struct SnowballSpread {
+    double mLower;      /* lower bound of the range */
+    double mUpper;      /* upper bound of the range */
+    double mLeverage;
+};
+
 class SnowballSwap {
 public:
     /* Constructors and destructor */
-    SnowballSwap(double notional, double fixedRate, double spread,
+    SnowballSwap(double notional, double fixedRate, SnowballSpread spread,
                 double maturity, double startDate, CompFreq freq);
     ~SnowballSwap();
 
@@ -19,7 +26,7 @@ public:
 private:
     double mNotional;       /* notional amount */
     double mFixedRate;      /* fixed rate */
-    double mSpread;         /* spread */
+    SnowballSpread mSpread; /* spread */
     double mMaturity;       /* maturity */
     double mStartDate;      /* date start to pay spread */
     CompFreq mFreq;         /* compounding frequency */
