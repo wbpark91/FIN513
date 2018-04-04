@@ -6,6 +6,7 @@ public:
     /* Consturctors and Destructor */
     OUProcess(double currentValue, double speed, double lmean,
                 double vol, double risk);
+    OUProcess() { }
     ~OUProcess();
 
     /* get G0 and G1 */
