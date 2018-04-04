@@ -11,6 +11,7 @@ struct SnowballSpread {
     double mLower;      /* lower bound of the range */
     double mUpper;      /* upper bound of the range */
     double mLeverage;
+    double mMinus;
 };
 
 class SnowballSwap {
@@ -33,5 +34,7 @@ private:
     CompFreq mFreq;         /* compounding frequency */
 
     OUProcess mProcess;      /* interest rate process */
+
+    void determineSpread(double r);
 };
 #endif
