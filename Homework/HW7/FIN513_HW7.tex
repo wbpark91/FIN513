@@ -296,10 +296,30 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	\begin{enumerate}[(a)]
-		\item	%% problem (a)
-		\item	%% problem (b)
-		\item	%% problem (c)
-	\end{enumerate}
+	Using simulation technique mentioned on the problem set, 10,000
+	sample paths were created and swap value is calculated.
+	Value is calculated for spread-payer.
+	Parameters were used from answer of problem 4. Table \ref{tab:prob5-summary}
+	shows summary statistics of the simulation. The average value was calculated
+	as 14.50(million), and standard deviation is calculated as 0.498.
+	Therefore, it seems that the swap is profitable for spread payer since
+	the present value of swap is positive.
+	\input{summary.tex}
+	Of course, it is profitable for spread payer ``on average", however, there
+	is a possibility that spread payer gets lots of loss.
+	Figure \ref{fig:prob5-hist} shows histogram of swap values from each path.
+	As you can see, there is a fat tail in the distribution. From the table
+	\ref{tab:prob5-summary}, the lowest value of the swap is -878.68, which is
+	enormously high loss. Among 10,000 sample paths, the number of paths which
+	consequences to negative value is 1,270, larger than 10\% of total number
+	of paths. It is because when interest rate goes out of the range,
+	amount of spread accumulates, therefore the amount of money has to be paid
+	increases sharply.
+	\begin{figure}
+		\centering
+		\includegraphics[scale = 0.7]{hist.png}
+		\caption{Histogram of swap values}
+		\label{fig:prob5-hist}
+	\end{figure}
 \end{homeworkProblem}
 \end{document}
