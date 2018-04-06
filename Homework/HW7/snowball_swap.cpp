@@ -4,6 +4,7 @@
 #include <cmath>
 #include <random>
 #include <iostream>
+#include <fstream>
 
 SnowballSwap::SnowballSwap(double notional, double fixedRate,
             SnowballSpread spread, double maturity, double startDate,
@@ -28,6 +29,11 @@ void SnowballSwap::determineSpread(double r) {
 
 std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
                                                 unsigned int numStep) {
+
+    std::ofstream rate;
+    rate.open("rate.csv", std::ios::app);
+    rate << "NUMPATH,RATE" << std::endl;
+
     /* get data from process */
     double r0 = mProcess.getCurrentValue();
     double vol = mProcess.getVol();
@@ -46,8 +52,6 @@ std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
 
     /* compounding frequency and calculation and payment date */
     double freq = 1.0 / mFreq;
-    double paymentDate = mStartDate;
-    double calcDate = paymentDate - freq;
 
     /* result vector */
     std::vector<double> result(numPath);
@@ -64,6 +68,13 @@ std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
         double r = r0;  /* initialize r */
         discount = 1.0;   /* initialize discount factor */
         double value = 0;   /* initialize value */
+
+        /* initialize */
+        double paymentDate = mStartDate;
+        double calcDate = paymentDate - freq;
+        double getDate = freq;
+        mSpread.mAmount = 0.0;
+
         for (int j = 0; j < numStep; ++j) {
             /* Generate random number */
             double e = engine(gen);
@@ -73,16 +84,20 @@ std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
             r = r * exp(-kappa * dt) + expLmean + diffusion * e;
 
             /* at every 3 month */
-            if (std::fmod((j + 1) * dt, freq) < 1e-03) {
+            if (fabs((j + 1) * dt - getDate) < 1e-03) {
                 value += discount * mNotional * mFixedRate * freq;
+                // std::cout << "At: " << (j+1) * dt << " Get: " << discount * mNotional * mFixedRate * freq << " Value: " << value << " Discount: " << discount << std::endl;
+                getDate += freq;
             }
 
             /* if payment date */
             if (fabs((j + 1) * dt - paymentDate) < 1e-03) {
                 /* pay */
-                value -= discount * mNotional * mSpread.mAmount;
+                value -= discount * mNotional * mSpread.mAmount * freq;
                 /* update next payment date */
                 paymentDate += freq;
+                // std::cout << "At: " << (j+1) * dt << " Pay: " << discount * mNotional * mSpread.mAmount * freq << " Value: " << value << " Discount: " << discount
+                // << " Notional: " << mNotional << " Spread: " << mSpread.mAmount << std::endl;
             }
 
             /* if calculation date */
@@ -91,11 +106,14 @@ std::vector<double> SnowballSwap::mcPrice(unsigned int numPath,
                 determineSpread(r);
                 /* update next calculation date */
                 calcDate += freq;
+                // std::cout << "At: " << (j+1) * dt << " Rate: " << r << " Spread: " << mSpread.mAmount << " Discount: " << discount << std::endl;
             }
 
             // std::cout <<calcDate<< ", " << (j+1) * dt << ", " << r << ", " << value << ", " << mSpread.mAmount << std::endl;
         }
         result[i] = value;  /* discounted cash flow at i_th path */
+        rate << i << "," << r << std::endl;
     }
+    rate.close();
     return result;
 }
