@@ -246,6 +246,15 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
+	Since $G_T = \pdv{Y_T}{Y_t} = 1 + \int_t^T -\kappa \pdv{Y_u}{Y_t}du
+	+ \int_t^T s_Y \pdv{Y_u}{Y_t}dW_u = 1 - \kappa \int_t^T G_u du +
+	\int_t^T s_Y G_u dW_u$ (assuming some regularity conditions hold),
+	stochastic process $G_T$ follows
+	$dG_T = -\kappa G_T dT + s_Y G_T dW_T$, and its initial value $G_t$ is
+	equal to 1. Therefore, we can evaluate delta of the claim within simulation.
+	It can be implemented by choosing the same random number from simulating
+	$Y_T$, and applying the number to $G_T$ process, and choose the initial
+	number as 1.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
