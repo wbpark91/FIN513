@@ -162,7 +162,28 @@
 \begin{homeworkProblem}
 	\begin{enumerate}[(a)]
 		\item  %% (a)
+		Assume that the amount of principal is equal to 1.
+		Since the swap fee is payable at the end of each quarter,
+		and there is no time value of money,
+		the value of fee for each swap maturing at $t_i$ is evaluated as
+		$0.25 \times \sum_{t \leq t_i}^{t_i} \varphi (1 - H_{0, t})$,
+		where $t \in \{0.25, 0.50, 0.75, 1.00\}$, and $\varphi$ is a swap fee.
+		Since risk-free rate is zero, current value of corresponding protection
+		leg is evaluated as $(1 - R) \times H_{0, t_i}$, where $R$ is recovery
+		rate. By equating both equations, each $H_{0, t_i}$ is calcuated as
+		$\frac{0.25 \times \varphi \sum_{t \leq t_{i - 1}}^{t_{i - 1}}
+			(1 - H_{0, t}) + 0.25 \varphi}{(1 - R) + 0.25 \varphi}$.
+		By calculating iteratively, we can calculate $H_{0, t_i}$.
+		Table \ref{tab:prob1} shows the result.
+		\input{prob1_table.tex}
 		\item  %% (b)
+		Since the remaining time-to-maturity is one year, the current value I
+		have to pay is equal to $0.25 \times 200 \times \sum_{t_i} (1 - H_{0, t_i})$
+		times the notional, where $t_i \in \{0.25, 0.50, 0.75, 1.00\}$.
+		It is calculated as 0.8925 million dollars. In contrast, the current value
+		of protection is calculated as $(1 - R) \times H_{0, 1}$ times notional,
+		which is about 3.1238 million dollars. Therefore, the current value of
+		my position is $3.1238 - 0.8925 = 2.2313$ million dollars.
 	\end{enumerate}
 \end{homeworkProblem}
 
