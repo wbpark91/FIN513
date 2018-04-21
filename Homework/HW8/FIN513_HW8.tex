@@ -193,6 +193,30 @@
 \begin{homeworkProblem}
 	\begin{enumerate}[(a)]
 		\item  %% (a)
+		Since $H_T$ follows exponential distribution, cumulative distribution
+		of $D$ is derived as follows.
+		\begin{equation*}
+			\begin{aligned}
+				Prob(D < u)	&= Prob(e^{-a H_T} < u)	\\
+							&= \int_0^u e^{-ax} \times be^{-bx} dx	\\
+							&= \int_0^u be^{-(a + b)x}dx	\\
+							&= \left. -\frac{b}{a + b} e^{-(a + b)x} \right \rvert^{u}_0	\\
+							&= -\frac{b}{a + b} [e^{-(a + b)u} - 1]
+			\end{aligned}
+		\end{equation*}
+		Because $L$ is proportional to $D$, cumulative distribution of $D$ is
+		derived as $(1 - R) \times Prob(D < u) = -(1 - R) \frac{b}{a + b} [e^{-(a + b)u} - 1]$.
+		Figure \ref{fig:prob2-cdf} shows cumulative distribution of $D$ and $L$.
+		\begin{figure}[ht]
+		\centering
+			\includegraphics[scale = 0.6]{prob2_cdf.png}
+			\caption{Cumulative distribution of $D$ and $L$}
+			\label{fig:prob2-cdf}
+		\end{figure}
+		From the figure, it can be discovered that fraction of borrowers default
+		and proportion of loss converges to some value. As $u$ increases,
+		$e^{-(a + b)u}$ converges to zero, therefore $D$ converges to
+		$\frac{b}{a + b}$ and $L$ converges to $(1 - R)\frac{b}{a + b}$.
 		\item  %% (b)
 		\item  %% (c)
 	\end{enumerate}
