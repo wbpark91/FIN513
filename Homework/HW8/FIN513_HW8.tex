@@ -198,14 +198,26 @@
 		\begin{equation*}
 			\begin{aligned}
 				Prob(D < u)	&= Prob(e^{-a H_T} < u)	\\
-							&= \int_0^u e^{-ax} \times be^{-bx} dx	\\
-							&= \int_0^u be^{-(a + b)x}dx	\\
-							&= \left. -\frac{b}{a + b} e^{-(a + b)x} \right \rvert^{u}_0	\\
-							&= -\frac{b}{a + b} [e^{-(a + b)u} - 1]
+							&= Prob(-a H_T < \log u)	\\
+							&= Prob(H_T > -\frac{1}{a} \log u)	\\
+							&= \int_{-\frac{1}{a} \log u}^{\infty} be^{-bx}dx	\\
+							&= \left. -e^{-bx} \right \vert^{\infty}_{-\frac{1}{a} \log u}	\\
+							&= u^{\frac{b}{a}}
 			\end{aligned}
 		\end{equation*}
-		Because $L$ is proportional to $D$, cumulative distribution of $D$ is
-		derived as $(1 - R) \times Prob(D < u) = -(1 - R) \frac{b}{a + b} [e^{-(a + b)u} - 1]$.
+		By using the same method, cumulative distribution of $L$ is derived
+		as follows.
+		\begin{equation*}
+			\begin{aligned}
+				Prob(L < v)	&= Prob((1 - R)e^{-a H_T} < v)	\\
+							&= Prob(\log(1 - R) -a H_T < \log v)	\\
+							&= Prob(H_T > -\frac{1}{a} \log \frac{v}{1 - R})	\\
+							&= \int_{-\frac{1}{a} \log \frac{v}{1 - R}}^{\infty} be^{-bx}dx	\\
+							&= \left. -e^{-bx} \right \vert^{\infty}_{-\frac{1}{a} \log \frac{v}{1 - R}}	\\
+							&= \left( \frac{v}{1 - R} \right)^{\frac{b}{a}}	\\
+							v \in [0, 1 - R]&
+			\end{aligned}
+		\end{equation*}
 		Figure \ref{fig:prob2-cdf} shows cumulative distribution of $D$ and $L$.
 		\begin{figure}[ht]
 		\centering
@@ -213,11 +225,8 @@
 			\caption{Cumulative distribution of $D$ and $L$}
 			\label{fig:prob2-cdf}
 		\end{figure}
-		From the figure, it can be discovered that fraction of borrowers default
-		and proportion of loss converges to some value. As $u$ increases,
-		$e^{-(a + b)u}$ converges to zero, therefore $D$ converges to
-		$\frac{b}{a + b}$ and $L$ converges to $(1 - R)\frac{b}{a + b}$.
 		\item  %% (b)
+		
 		\item  %% (c)
 	\end{enumerate}
 \end{homeworkProblem}
