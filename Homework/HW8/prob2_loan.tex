@@ -1,0 +1,15 @@
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}cccc@{}}
+\toprule
+Tranches & Proportion & Interest         & Payment                      \\ \midrule
+AAA      & 0.51       & LIBOR + 0.25\%   & $-0.51 \times N \times (LIBOR + 0.25\%)$ \\
+AA       & 0.03       & LIBOR + 0.5\%    & $-0.03 \times N \times (LIBOR + 0.5\%)$  \\
+A        & 0.13       & LIBOR + 1.25\%   & $-0.13 \times N \times (LIBOR + 1.25\%)$ \\
+BBB      & 0.11       & LIBOR + 2.5\%    & $-0.11 \times N \times (LIBOR + 2.5\%)$  \\
+BB       & 0.20       & LIBOR + 4\%      & $-0.20 \times N \times (LIBOR + 4\%)$    \\
+Sum      & 0.98       &                  & $-0.98 \times N \times LIBOR + N \times 1.38\%$ \\ \bottomrule
+\end{tabular}
+\caption{Annual payment of each tranche}
+\label{tab:prob2-loan}
+\end{table}
