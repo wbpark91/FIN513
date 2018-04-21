@@ -223,11 +223,41 @@
 		\centering
 			\includegraphics[scale = 0.6]{prob2_cdf.png}
 			\caption{Cumulative distribution of $D$ and $L$}
-			\label{fig:prob2-cdf}
+			\label{fig:prob2-cdf}9
 		\end{figure}
 		\item  %% (b)
-		
+		Let $x$ denote the lowest attachment point such that the probabilities
+		of the tranche above that point experiencing any principal loss is $p$.
+		Since cumulative distribution function is monotonically increasing,
+		probability such that fraction of loss for CLO is greater than $x$ is
+		equal to $p$. (i.e. $Prob(L > x) = p$) Solving the equation, $x$ is
+		derived as follows.
+		\begin{equation*}
+			\begin{aligned}
+				Prob(L > x)	= p	\\
+				1 - \left( \frac{x}{1 - R} \right)^{\frac{b}{a}}	= p	\\
+				x = (1 - R) \times (1 - p)^{\frac{a}{b}}
+			\end{aligned}
+		\end{equation*}
+		Table \ref{tab:prob2-attachment} shows the lower attachments for
+		each tranche calculated by using the equation above. From the table
+		about 50\% of loans consists of AAA ratings.
+		\input{prob2_attachment.tex}
 		\item  %% (c)
+		Let $N$ denote the notional amount of CLO as a whole. Then, face value
+		of each tranche is equal to proportion of each tranche times $N$.
+		Assuming interests are paid annually, interest payment for each tranche
+		is calculated.
+		Table \ref{tab:prob2-loan} represents annual interest payment for each
+		tranche.
+		\input{prob2_loan.tex}
+		Since we assumed that the bottom level tranche is entirely wiped out,
+		and the loss is amortized equally, issuer will get
+		$0.98 \times N \times (LIBOR + 4\%)$ amount of interest payment
+		at each year. Therefore, the interest margin is calculated as
+		$-0.98 \times N \times LIBOR + N \times 1.38\% -
+			0.98 \times N \times (LIBOR + 4\%) = N \times 2.54\%$.
+		Therefore, interest margin for this scenario is 2.54\% per year.
 	\end{enumerate}
 \end{homeworkProblem}
 

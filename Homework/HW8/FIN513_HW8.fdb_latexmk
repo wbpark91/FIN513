@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1524289025 "FIN513_HW8.tex" "FIN513_HW8.pdf" "FIN513_HW8" 1524289026
+["pdflatex"] 1524338728 "FIN513_HW8.tex" "FIN513_HW8.pdf" "FIN513_HW8" 1524338729
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -65,11 +65,13 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1490340647 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1490340673 3873397 d0f77ec6992ef97dcf3339c036b59d58 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "FIN513_HW8.aux" 1524289025 663 66f226a674232d672432d528bfe98136 ""
-  "FIN513_HW8.tex" 1524289024 10504 76c24e4534b00e26b3d0811803900cc9 ""
+  "FIN513_HW8.aux" 1524338729 945 6609d8d40121427f8c6c173c3121e241 ""
+  "FIN513_HW8.tex" 1524338727 12024 a7788f46fe15ccf93a49d9fbf2180ebe ""
   "prob1_table.tex" 1524261658 393 06f58fb369621953fef9d8eeb8e113d2 ""
+  "prob2_attachment.tex" 1524290214 521 d7b3efdbc30003a00b8c0e6abdf6952b ""
   "prob2_cdf.png" 1524289023 18459 e76ffb232dd67c3a00a8a2a95cbe15da ""
+  "prob2_loan.tex" 1524338292 781 0f77fa76948c3e997e136de687f01cd6 ""
   (generated)
-  "FIN513_HW8.log"
   "FIN513_HW8.pdf"
+  "FIN513_HW8.log"
   "FIN513_HW8.aux"

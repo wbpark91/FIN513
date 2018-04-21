@@ -99,6 +99,10 @@ INPUT prob1_table.tex
 INPUT prob2_cdf.png
 INPUT ./prob2_cdf.png
 INPUT ./prob2_cdf.png
+INPUT prob2_attachment.tex
+INPUT prob2_attachment.tex
+INPUT prob2_loan.tex
+INPUT prob2_loan.tex
 INPUT FIN513_HW8.aux
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
