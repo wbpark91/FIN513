@@ -267,7 +267,87 @@
 \begin{homeworkProblem}
 	\begin{enumerate}[(a)]
 		\item  %% (a)
+		Assume the swap matuares at $T$.
+		In order to derive $V(S_t, t, \varphi_0)$, it needs to derive each leg
+		of swap first. Since bank pays $\varphi$ dollars continuously,
+		present value of the leg is evaluated as
+		$\varphi \int_t^T e^{-r_d s}ds = \varphi (-\frac{1}{r_d}) e^{-r_d s}
+			\rvert^T_t = \frac{\varphi}{r_d}e^{-r_d t}(1 - e^{-r_d(T - t)})$.
+		Similarly, present value of the foreign currency leg is evaluated as
+		$S_t \int_t^T e^{-r_f s}ds = S_t (-\frac{1}{r_f}) e^{-r_f s}
+			\rvert^T_t = \frac{S_t}{r_f}e^{-r_f t}(1 - e^{-r_f(T - t)})$.
+		Equating both equations, $\varphi_0$ is calculated as follows.
+		\begin{equation*}
+			\begin{aligned}
+				\frac{\varphi_0}{r_d}(1 - e^{-r_d T})
+					&= \frac{S_0}{r_f}(1 - e^{-r_f T})	\\
+				\Rightarrow \varphi_0 &= \frac{S_0 r_d}{r_f}
+					\left( \frac{1 - e^{-r_f T}}{1 - e^{-r_d T}} \right)	\\
+					&= \frac{0.01}{0.05}
+						\left( \frac{1 - e^{-0.05 \times 5}}
+						 	{1 - e^{-0.01 \times 5}}\right)	\\
+					&= 0.9071
+			\end{aligned}
+		\end{equation*}
 		\item  %% (b)
+		Since there is no collateral, we can assume that there is no recovery if
+		the counterparty is default.
+		Therefore, CVA of the contract is derived as follows.
+		\begin{equation*}
+			\begin{aligned}
+				CVA	&= \int_0^T e^{-r_d t} 1_{\text{\{c/p defaults at t\}}}
+					\max(V_t, 0) dt	\\
+					&= \int_0^T e^{-r_d t} \lambda_t e^{-\int_0^t \lambda_u du}
+						\max \left( \frac{S_t}{r_f} e^{-r_f t}(1 - e^{-r_f (T- t)})
+							 - \frac{\varphi_0}{r_d} e^{-r_d t} (1 - e^{-r_d (T - t)}), 0 \right)dt
+			\end{aligned}
+		\end{equation*}
+		In order to execute simulation, I discretized the integral as follows.
+		\begin{equation*}
+			\begin{aligned}
+				CVA	&= \sum_{i = 0}^{M} \left[ e^{-r_d(i\Delta t)}
+					\lambda_i e^{-\sum_{j = 0}^i \lambda_j \Delta t} \right. \\
+					& \left. \times \max \left( \frac{S_i}{r_f} e^{-r_f (i \Delta t)}(1 - e^{-r_f (T - i \Delta t)})
+						 - \frac{\varphi_0}{r_d} e^{-r_d (i \Delta t)} (1 - e^{-r_d (T - i \Delta t)}), 0 \right) \Delta t
+				 \right]	\\
+				M \Delta t &= T	\\
+				\lambda_i	&= \lambda_{i - 1} \times
+					\exp[(b_{\lambda}^Q - 0.5\sigma_{\lambda}^2)\Delta t
+							+ \sigma_{\lambda} \sqrt{\Delta t} \phi_1]	\\
+				S_i	&= S_{i - 1} \times
+					\exp[(r_d - r_f - 0.5 \sigma_S^2)\Delta t
+							+ \sigma_S \sqrt{\Delta t} \phi_2]	\\
+				\begin{pmatrix}
+					\phi_1	\\ \phi_2
+				\end{pmatrix}
+				&\sim
+				N\left(
+					\begin{pmatrix}
+						0	\\	0
+					\end{pmatrix}
+					,
+					\begin{pmatrix}
+						1	& \rho	\\	\rho & 1
+					\end{pmatrix}
+				\right)
+			\end{aligned}
+		\end{equation*}
+		By simulating 5000 times with $M = 450$ for $\rho = 0, 0.1, 0.2 \dots
+		1.0$, and using given parameters, CVA was calculated at each correlation.
+		Figure \ref{fig:prob3-cva} shows CVA at each correlation.
+		\begin{figure}[ht]
+		\centering
+			\includegraphics[scale = 0.6]{prob3_cva.png}
+			\caption{CVA at each correlation}
+			\label{fig:prob3-cva}
+		\end{figure}
+		From the figure, we can discover that CVA increases as correlation
+		increases. Since the bank earns more money if exchange rate increases,
+		if default intensity is highly correlated with exchange rate,
+		expected amount of position value when counterparty defaults will be
+		higher. That's why CVA increases as correlation increases.
+		Since CVA at $\rho = 0.5$ is calcuated as 0.789921\%, if notional value
+		of swap is 1 billion, CVA is calculated as about 7.899 million dollars.
 	\end{enumerate}
 \end{homeworkProblem}
 

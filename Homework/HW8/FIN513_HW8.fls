@@ -103,6 +103,11 @@ INPUT prob2_attachment.tex
 INPUT prob2_attachment.tex
 INPUT prob2_loan.tex
 INPUT prob2_loan.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+INPUT prob3_cva.png
+INPUT ./prob3_cva.png
+INPUT ./prob3_cva.png
 INPUT FIN513_HW8.aux
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
